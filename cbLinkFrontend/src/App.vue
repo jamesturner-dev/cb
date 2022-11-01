@@ -1,19 +1,22 @@
 <template>
-  <section class="h-full bg-gray-600 bg-opacity-10 dark:bg-gray-900">
+  <section
+    class="h-full bg-gray-600 bg-opacity-10 dark:bg-black dark:bg-opacity-95">
     <SearchForm />
 
     <main class="flex-1 relative mx-auto max-w-4xl">
-      <div class="mt-5 p-5 bg-white border-r-4 rounded-t-lg">
+      <div
+        class="mt-5 p-5 bg-white dark:bg-black dark:bg-opacity-50 dark:border-gray-900 border-r-4 rounded-t-lg">
         <div class="flex">
           <div class="flex-1">
-            <span>
+            <div class="flex">
               <img
                 class="h-8 w-8 rounded-full mr-2"
                 src="https://imagedelivery.net/jUv0WjkQAcJxE0kRYIap3Q/bf3cb42a-ebe3-4717-2a16-4e54c6c79700/public"
                 alt="" />
-            </span>
-            <div class="px-4 sm:px-6 md:px-0">
-              <h1 class="text-3xl font-bold tracking-tight text-gray-900">
+            </div>
+            <div class="px-4 sm:px-6 md:px-0 flex">
+              <h1
+                class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
                 Salty Ape Admin
               </h1>
             </div>
@@ -68,7 +71,6 @@
 <script setup>
 import { useDark, useToggle } from "@vueuse/core";
 import SearchForm from "./components/SearchForm.vue";
-import PageHeading from "./components/PageHeading.vue";
 import TheDirectory from "./components/TheDirectory.vue";
 import CurrentLink from "./components/shared/CurrentLink.vue";
 import SubmitLink from "./components/SubmitLink.vue";
