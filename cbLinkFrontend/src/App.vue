@@ -37,8 +37,11 @@
           <select
             v-model="selected"
             @change="tabChange()"
-            class="w-90 rounded-md border-2 border-gray-300">
-            <option v-for="tab in tabs" :value="tab.name" class="text-gray-600">
+            class="w-90 rounded-md border border-gray-200 dark:border-gray-900 dark:bg-black dark:text-gray-300">
+            <option
+              v-for="tab in tabs"
+              :value="tab.name"
+              class="text-gray-600 dark:bg-black">
               {{ tab.name }}
             </option>
           </select>
@@ -46,7 +49,7 @@
 
         <div
           v-if="selected == 'Add CbLink'"
-          class="mt-5 divide-y divide-gray-200">
+          class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
           <CurrentLink />
           <TheDirectory />
           <SubmitLink />
@@ -54,13 +57,13 @@
 
         <div
           v-if="selected == 'Latest Links'"
-          class="mt-5 divide-y divide-gray-200">
+          class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
           <LatestLinks />
         </div>
 
         <div
           v-if="selected == 'Directory View'"
-          class="mt-5 divide-y divide-gray-200">
+          class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
           <DirectorySection />
         </div>
       </div>

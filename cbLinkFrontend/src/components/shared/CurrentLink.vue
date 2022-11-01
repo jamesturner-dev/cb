@@ -1,6 +1,6 @@
 <template>
   <div class="mb-5">
-    <h3 class="text-lg font-medium leading-6 text-gray-900">
+    <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-300">
       CBLink #: <span class="text-purple-600">{{ currentCount }}</span>
     </h3>
     <p class="max-w-2xl text-sm text-gray-500">

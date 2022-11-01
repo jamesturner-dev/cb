@@ -135,7 +135,10 @@ onMounted(() => {
         <dt class="pt-3 text-sm font-medium text-gray-500">URL:</dt>
         <dd class="flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
           <span class="flex-grow">
-            <input type="text" class="cblink-input" v-model="cbURL" />
+            <input
+              type="text"
+              class="cblink-input border-2 bg-white border-gray-300 dark:bg-black dark:bg-opacity-95 dark:border-gray-800 dark:text-gray-600"
+              v-model="cbURL" />
           </span>
         </dd>
       </div>
@@ -144,7 +147,10 @@ onMounted(() => {
         <dt class="pt-3 mt-5 text-sm font-medium text-gray-500">Title:</dt>
         <dd class="pt-3 flex text-xs text-gray-900 sm:col-span-2 sm:mt-0">
           <span class="flex-grow">
-            <input type="text" class="cblink-input" v-model="cbTitle" />
+            <input
+              type="text"
+              class="cblink-input border-2 bg-white border-gray-300 dark:bg-black dark:bg-opacity-95 dark:border-gray-800 dark:text-gray-600 cblink-input"
+              v-model="cbTitle" />
           </span>
         </dd>
       </div>
@@ -156,7 +162,7 @@ onMounted(() => {
             <textarea
               rows="4"
               cols="50"
-              class="cblink-input"
+              class="cblink-input cblink-input border-2 bg-white border-gray-300 dark:bg-black dark:bg-opacity-95 dark:border-gray-800 dark:text-gray-600"
               v-model="cbDescription" />
           </span>
         </dd>
@@ -171,7 +177,7 @@ onMounted(() => {
               name="selected-tab"
               v-model="currentCat"
               on-change="fireLogger()"
-              class="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-purple-500 focus:outline-none focus:ring-purple-500 sm:text-sm">
+              class="mt-1 block w-full rounded-md cblink-input border-2 bg-white border-gray-300 dark:bg-black dark:bg-opacity-95 dark:border-gray-800 dark:text-gray-600 py-2 pl-3 pr-10 text-base focus:border-purple-500 focus:outline-none focus:ring-purple-500 sm:text-sm">
               <option v-for="cat in cats" :key="cat">
                 {{ cat }}
               </option>
@@ -184,19 +190,22 @@ onMounted(() => {
         <dt class="pt-3 text-sm font-medium text-gray-500">Tags:</dt>
         <dd class="flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
           <span class="flex-grow">
-            <input type="text" class="cblink-input" v-model="cbTags" />
+            <input
+              type="text"
+              class="cblink-input cblink-input border-2 bg-white border-gray-300 dark:bg-black dark:bg-opacity-95 dark:border-gray-800 dark:text-gray-600"
+              v-model="cbTags" />
           </span>
           <span class="pt-3 ml-4 flex flex-shrink-0 items-start space-x-4">
             <button
               type="button"
               @click="fireLogger"
-              class="rounded-md bg-white font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
+              class="rounded-md bg-white dark:bg-opacity-10 px-1 py-0.5 font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
               Update
             </button>
             <span class="text-gray-300" aria-hidden="true">|</span>
             <button
               type="button"
-              class="rounded-md bg-white font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
+              class="rounded-md bg-white dark:bg-opacity-10 px-1 py-0.5 font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
               Remove
             </button>
           </span>
@@ -233,7 +242,7 @@ onMounted(() => {
           <div class="mt-5 tabs w-100">
             <select
               v-model="selectedSimilar"
-              class="w-90 rounded-md border-2 border-gray-300">
+              class="w-90 rounded-md border-2 cblink-input bg-white border-gray-300 dark:bg-black dark:bg-opacity-95 dark:border-gray-800 dark:text-gray-600">
               <option
                 v-for="link in latestLinks"
                 :value="link._id"
