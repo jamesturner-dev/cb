@@ -3,7 +3,7 @@
     <li
       v-for="link in latestLinks"
       :key="link._id"
-      class="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
+      class="col-span-1 divide-y divide-gray-200 dark:divide-gray-900 rounded-lg bg-white dark:bg-black dark:bg-opacity-90 shadow">
       <LinkLoop :link="link" />
       <LinkTags :tags="link.tags" />
     </li>
