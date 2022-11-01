@@ -1,8 +1,8 @@
-# THIS IS NOT READY FOR THE WORLD
+## THIS IS NOT READY FOR THE WORLD
 
-### I had an idea about tracking all the links from my various enterprises. I then thought that I really should use like a short url type scheme. And maybe share a directory of those links...
+##### I had an idea about tracking all the links from my various enterprises. I then thought that I really should use like a short url type scheme. And maybe share a directory of those links...
 
-## TLDR;
+### TLDR;
 
 This is in no way, shape, or form finished software. It will be done in due time, however is does show how I do full stack at this point.
 
@@ -15,4 +15,4 @@ This is in no way, shape, or form finished software. It will be done in due time
 
 ### This will not run as is from this repository
 
-It needs the config file for connecting to the db, etc. I will figure out what the best practice is for including dummy file(s).
+It needs the config file for connecting to the db, etc. I will figure out what the best practice is for including dummy file(s). Uploading now because I almost broke it without a backup...
