@@ -81,6 +81,11 @@ const LinkSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("Link", LinkSchema);
+// ** I tried to do it this way, but I couldn't get it to work.
+// ** Maybe I need to use the pre() method?
+// ** https://mongoosejs.com/docs/middleware.html
+// ** anyway my hack is using the countDocuments() method
+
 // const autoIncrement = require("mongoose-auto-increment");
 // LinkSchema.plugin(autoIncrement.plugin, {
 //   model: "Link",

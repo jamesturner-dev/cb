@@ -20,7 +20,7 @@ const latestLinks = ref([]);
 const getLatestLinks = async () => {
   const response = await fetch("http://localhost:5000/api/v1/links");
   const data = await response.json();
-  const lyst = data.data; // this seems extra, without it results varied...
+  const lyst = data.data; // this seems extra, without it results vary...
   lyst.forEach((item) => {
     latestLinks.value.push(item);
   });

@@ -14,7 +14,6 @@ const directories = require("./routes/directories");
 const links = require("./routes/links");
 const auth = require("./routes/auth");
 const users = require("./routes/users");
-const reviews = require("./routes/reviews");
 const count = require("./routes/count");
 const shortUrl = require("./routes/shortUrl");
 
@@ -43,7 +42,6 @@ app.use("/api/v1/dir", directories);
 app.use("/api/v1/links", links);
 app.use("/api/v1/auth", auth);
 app.use("/api/v1/users", users);
-app.use("/api/v1/reviews", reviews);
 app.use("/api/v1/count", count);
 app.use("/api/v1/shortUrl", shortUrl);
 
