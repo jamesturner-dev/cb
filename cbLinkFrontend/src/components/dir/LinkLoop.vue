@@ -1,0 +1,33 @@
+<template>
+  <div class="flex w-full items-center justify-between space-x-6 p-5">
+    <div class="flex-1 truncate">
+      <div class="flex items-center space-x-3">
+        <h3 class="truncate text-sm font-medium text-gray-900">
+          <a :href="link.longUrl">{{ link.title }}</a>
+        </h3>
+        <span
+          class="cursor-pointer inline-block flex-shrink-0 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-800 hover:bg-green-500 hover:text-white">
+          {{ link.category }}
+        </span>
+      </div>
+      <p class="mt-1 truncate text-sm text-gray-500">
+        {{ link.description }}
+      </p>
+      <div class="text-xs text-gray-400 font-semibold">
+        Created on {{ link.createdAt.slice(0, 10) }} . Rated:
+        <span class="text-green-600">
+          {{ link.rating }}
+        </span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+defineProps({
+  link: {
+    type: Object,
+    required: true,
+  },
+});
+</script>
