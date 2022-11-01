@@ -12,3 +12,7 @@ This is in no way, shape, or form finished software. It will be done in due time
 - [Vue3](https://vuejs.org/)
 - [MongoDb](https://www.mongodb.com/)
 - [Mongoose](https://mongoosejs.com/)
+
+### This will not run as is from this repository
+
+It needs the config file for connecting to the db, etc. I will figure out what the best practice is for including dummy file(s).
