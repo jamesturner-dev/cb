@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div
+    class="h-full bg-gray-600 bg-opacity-10 dark:bg-black dark:bg-opacity-95">
     <!-- <Header /> -->
     <router-view :key="$route.fullPath" />
     <Footer />

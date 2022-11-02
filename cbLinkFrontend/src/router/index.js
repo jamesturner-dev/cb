@@ -1,7 +1,8 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "../views/HomeView.vue";
 import Category from "../views/CategoryView.vue";
-
+import Tags from "../views/TagView.vue";
+import NotFound from "../views/NotFound.vue";
 const routes = [
   {
     path: "/",
@@ -15,26 +16,16 @@ const routes = [
     component: Category,
   },
 
-  // {
-  //   path: "/create/:formType/:formName/:projectName",
-  //   name: "Create",
-  //   component: Create
-  // },
-  // {
-  //   path: "/user/:name",
-  //   name: "User",
-  //   component: User,
-  //   props: true // passing name as a prop into component, sweet
-  // },
-  // {
-  //   path: "/project/:name",
-  //   name: "Project",
-  //   component: Project
-  // },
-  // {
-  //   path: "/:catchAll(.*)",
-  //   component: NotFound,
-  // },
+  {
+    path: "/tag/:name",
+    name: "Tags",
+    component: Tags,
+  },
+
+  {
+    path: "/:catchAll(.*)",
+    component: NotFound,
+  },
 ];
 
 const router = createRouter({

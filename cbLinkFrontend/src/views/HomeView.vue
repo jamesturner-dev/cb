@@ -1,11 +1,10 @@
 <template>
-  <section
-    class="h-full bg-gray-600 bg-opacity-10 dark:bg-black dark:bg-opacity-95">
+  <section>
     <SearchForm />
 
-    <main class="flex-1 relative mx-auto max-w-4xl">
+    <main class="flex-1 relative mx-auto max-w-4xl mt-5">
       <div
-        class="mt-5 p-5 bg-white dark:bg-black dark:bg-opacity-50 dark:border-gray-900 border-r-4 rounded-t-lg">
+        class="p-5 bg-white dark:bg-black dark:bg-opacity-50 dark:border-gray-900 border-r-4 rounded-t-lg">
         <div class="flex">
           <div class="flex-1">
             <div class="flex">

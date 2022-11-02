@@ -16,9 +16,9 @@
         </div>
 
         <div class="mt-12 md:mt-0">
-          <h3 class="text-sm font-medium text-neutral-400">About Us:</h3>
+          <h3 class="text-sm font-medium text-neutral-400">Categories:</h3>
           <ul role="list" class="mt-4 space-y-4">
-            <li v-for="item in navigation.about" :key="item.name">
+            <li v-for="item in navigation.categories" :key="item.name">
               <a
                 :href="item.href"
                 class="px-2 text-sm dark:text-neutral-400 dark:hover:text-white text-neutral-500 hover:text-neutral-900">
@@ -33,7 +33,7 @@
         <div>
           <h3 class="text-sm font-medium text-neutral-400">Users:</h3>
           <ul role="list" class="mt-4 space-y-4">
-            <li v-for="item in navigation.company" :key="item.name">
+            <li v-for="item in navigation.friends" :key="item.name">
               <a
                 :href="item.href"
                 class="px-2 py-1 text-sm dark:text-neutral-400 dark:hover:text-white text-neutral-500 hover:text-neutral-900">
@@ -64,17 +64,17 @@
 const navigation = {
   internal: [
     { name: "Home Page", href: "/" },
-    { name: "The Blogs", href: "/blogs" },
-    { name: "The Hottest", href: "/hottest" },
+    { name: "James' Resume", href: "https://cv.jamesturner.dev/" },
+    { name: "James Twitter", href: "https://twitter.com/JamesTurnerDev" },
     { name: "Top Rated", href: "/top" },
   ],
-  about: [
-    { name: "About Us", href: "/page/about" },
-    { name: "Contact Us", href: "/page/feedback" },
-    { name: "Terms of Use", href: "/page/terms" },
-    { name: "Privacy Policy", href: "/page/privacy" },
+  categories: [
+    { name: "Technology", href: "/cat/technology" },
+    { name: "News Services", href: "/cat/news" },
+    { name: "Online Services", href: "/cat/services" },
+    { name: "Podcasts", href: "/cat/podcast" },
   ],
-  company: [
+  friends: [
     { name: "User Login", href: "/user/login" },
     { name: "Sign Up", href: "/user/register" },
     { name: "Forgot Password", href: "/user/forgot" },
