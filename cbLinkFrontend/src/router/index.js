@@ -3,6 +3,7 @@ import Home from "../views/HomeView.vue";
 import Category from "../views/CategoryView.vue";
 import Tags from "../views/TagView.vue";
 import NotFound from "../views/NotFound.vue";
+import UserView from "../views/UserView.vue";
 const routes = [
   {
     path: "/",
@@ -21,7 +22,11 @@ const routes = [
     name: "Tags",
     component: Tags,
   },
-
+  {
+    path: "/user/:name",
+    name: "UserView",
+    component: UserView,
+  },
   {
     path: "/:catchAll(.*)",
     component: NotFound,

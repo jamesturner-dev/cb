@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import { onMounted } from "vue";
-// import swal from "sweetalert2";
 
 const latestLinks = ref([]);
 
