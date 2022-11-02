@@ -1,32 +1,5 @@
 <template>
   <section>
-    <div class="flex">
-      <div class="flex-1">
-        <div class="flex">
-          <img
-            class="h-8 w-8 rounded-full mr-2"
-            src="https://imagedelivery.net/jUv0WjkQAcJxE0kRYIap3Q/bf3cb42a-ebe3-4717-2a16-4e54c6c79700/public"
-            alt="" />
-        </div>
-        <div class="px-4 sm:px-6 md:px-0 flex">
-          <h1
-            class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
-            Salty Ape Admin
-          </h1>
-        </div>
-      </div>
-
-      <Switch
-        v-model="isDark"
-        :class="isDark ? 'bg-purple-700' : 'bg-neutral-200'"
-        class="relative inline-flex h-6 w-11 items-center rounded-full">
-        <span class="sr-only">Toggle Dark Mode</span>
-        <span
-          :class="isDark ? 'translate-x-6' : 'translate-x-1'"
-          class="inline-block h-4 w-4 transform rounded-full bg-white transition" />
-      </Switch>
-    </div>
-
     <div class="mt-5 tabs w-100">
       <select
         v-model="selected"
@@ -40,7 +13,6 @@
         </option>
       </select>
     </div>
-
     <div
       v-if="selected == 'Add CbLink'"
       class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
@@ -65,7 +37,6 @@
 
 <script setup>
 import { useDark } from "@vueuse/core";
-import SearchForm from "../components/SearchForm.vue";
 import TheDirectory from "../components/TheDirectory.vue";
 import CurrentLink from "../components/shared/CurrentLink.vue";
 import SubmitLink from "../components/SubmitLink.vue";
@@ -73,8 +44,6 @@ import LatestLinks from "../components/LatestLinks.vue";
 import DirectorySection from "../components/DirectorySection.vue";
 
 import { ref } from "vue";
-import { Switch } from "@headlessui/vue";
-const isDark = ref(useDark());
 
 const tabs = [
   { name: "Add CbLink", href: "#", current: true },
