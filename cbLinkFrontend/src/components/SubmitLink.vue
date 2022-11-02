@@ -236,7 +236,7 @@ onMounted(() => {
 
       <div
         v-if="similarAndRelated"
-        class="sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 divide-y divide-gray-200">
+        class="sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 divide-y divide-gray-200 dark:divide-gray-800">
         <dt class="pt-3 text-sm font-medium text-gray-500">Similar:</dt>
         <dd class="pt-3 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
           <div class="mt-5 tabs w-100">
@@ -257,7 +257,7 @@ onMounted(() => {
     <div class="mt-10 grid content-center mx-10">
       <button
         type="button"
-        class="w-50 mx-10 rounded-md border-2 px-2 py-1 border-purple-600 font-medium text-purple-600 hover:border-white hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+        class="w-50 mx-10 rounded-md border-2 px-2 py-1 mb-5 border-purple-600 font-medium text-purple-600 hover:border-white hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
         v-on:click.prevent="handleSubmit()">
         Create New CBLink
       </button>

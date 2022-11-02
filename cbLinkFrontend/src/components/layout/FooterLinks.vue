@@ -1,0 +1,90 @@
+<template>
+  <div class="pb-8 xl:grid xl:grid-cols-4 xl:gap-8 footer-links">
+    <div class="grid grid-cols-2 gap-8 xl:col-span-4">
+      <div class="md:grid md:grid-cols-2 md:gap-8">
+        <div>
+          <h3 class="text-sm font-medium text-neutral-400">The Nav:</h3>
+          <ul role="list" class="mt-4 space-y-4">
+            <li v-for="item in navigation.internal" :key="item.name">
+              <a
+                :href="item.href"
+                class="px-2 text-sm dark:text-neutral-400 dark:hover:text-white text-neutral-500 hover:text-neutral-900">
+                {{ item.name }}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-12 md:mt-0">
+          <h3 class="text-sm font-medium text-neutral-400">About Us:</h3>
+          <ul role="list" class="mt-4 space-y-4">
+            <li v-for="item in navigation.about" :key="item.name">
+              <a
+                :href="item.href"
+                class="px-2 text-sm dark:text-neutral-400 dark:hover:text-white text-neutral-500 hover:text-neutral-900">
+                {{ item.name }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="md:grid md:grid-cols-2 md:gap-8">
+        <div>
+          <h3 class="text-sm font-medium text-neutral-400">Users:</h3>
+          <ul role="list" class="mt-4 space-y-4">
+            <li v-for="item in navigation.company" :key="item.name">
+              <a
+                :href="item.href"
+                class="px-2 py-1 text-sm dark:text-neutral-400 dark:hover:text-white text-neutral-500 hover:text-neutral-900">
+                {{ item.name }}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-12 md:mt-0">
+          <h3 class="text-sm font-medium text-neutral-400">External:</h3>
+          <ul role="list" class="mt-4 space-y-4">
+            <li v-for="item in navigation.external" :key="item.name">
+              <a
+                :href="item.href"
+                class="px-2 py-1 text-sm dark:text-neutral-400 dark:hover:text-white text-neutral-500 hover:text-neutral-900">
+                {{ item.name }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+const navigation = {
+  internal: [
+    { name: "Home Page", href: "/" },
+    { name: "The Blogs", href: "/blogs" },
+    { name: "The Hottest", href: "/hottest" },
+    { name: "Top Rated", href: "/top" },
+  ],
+  about: [
+    { name: "About Us", href: "/page/about" },
+    { name: "Contact Us", href: "/page/feedback" },
+    { name: "Terms of Use", href: "/page/terms" },
+    { name: "Privacy Policy", href: "/page/privacy" },
+  ],
+  company: [
+    { name: "User Login", href: "/user/login" },
+    { name: "Sign Up", href: "/user/register" },
+    { name: "Forgot Password", href: "/user/forgot" },
+    { name: "User Help", href: "/page/help" },
+  ],
+  external: [
+    { name: "Ambiguous Redirect", href: "https://ambiguousredirect.com/" },
+    { name: "Tweet 'O the Day", href: "https://tweetotheday.com" },
+    { name: "Got A Link?", href: "https://gotal.ink" },
+    { name: "Headlin3s", href: "https://headlin3s.com" },
+  ],
+};
+</script>

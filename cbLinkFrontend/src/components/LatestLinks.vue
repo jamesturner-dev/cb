@@ -26,7 +26,8 @@ onMounted(() => {
 <template>
   <section>
     <ul v-for="link in latestLinks" :key="link._id">
-      <li class="border-b border-gray-300 p-3 w-100">
+      <li
+        class="border-b border-gray-300 dark:border-gray-900 p-3 w-100 dark:bg-black dark:text-white bg-white">
         <a class="p-2" :href="link.longUrl">{{ link.title }}</a> - short url:
         <span class="text-purple-300 font-bold">{{ link.shortUrl }}</span>
       </li>
