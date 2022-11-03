@@ -2,8 +2,8 @@ const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
 const Counter = require("../models/Counter");
 
-// ** @desc   Get single directory
-// ** @route  GET /api/v1/directories/:id
+// ** @desc   Get link count
+// ** @route  GET /api/v1/count
 // ** @access Public
 exports.getCount = asyncHandler(async (req, res, next) => {
   const counter = await Counter.findById("635a98d4b233907564ff06ae");
@@ -14,11 +14,10 @@ exports.getCount = asyncHandler(async (req, res, next) => {
   }
 
   let { count } = counter;
-
-  c = count + 1;
+  count += 1;
 
   res.status(200).json({
     success: true,
-    data: c,
+    data: count,
   });
 });

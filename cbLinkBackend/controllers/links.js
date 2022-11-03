@@ -22,21 +22,21 @@ const getCount = async () => {
   const counter = await Counter.findById(record);
 
   if (!counter) {
-    console.log("No counter found");
+    console.log("No counter found.");
     return "Error: counter not found";
   }
 
   let { count } = counter;
-  const newCount = count + 1;
-
-  const update = { count: newCount };
+  count += 1;
+  const update = { count: count };
   let result = await Counter.findByIdAndUpdate(record, update);
 
   if (!result) {
+    console.log("Counter not updated.");
     return "Error - Update failed";
   }
 
-  return count + 1;
+  return count;
 };
 
 // ** @desc   Get all links
