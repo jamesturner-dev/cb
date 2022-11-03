@@ -1,7 +1,7 @@
 {
-  "name": "altmarket",
+  "name": "cblink",
   "version": "1.0.0",
-  "description": "The initial altMarket API",
+  "description": "The cb.link backend",
   "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=production node server",
