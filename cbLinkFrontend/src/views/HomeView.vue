@@ -1,61 +1,29 @@
 <template>
-  <section>
-    <div class="mt-5 tabs w-100">
-      <select
-        v-model="selected"
-        @change="tabChange()"
-        class="w-90 rounded-md border border-gray-200 dark:border-gray-900 dark:bg-black dark:text-gray-300">
-        <option
-          v-for="tab in tabs"
-          :value="tab.name"
-          class="text-gray-600 dark:bg-black">
-          {{ tab.name }}
-        </option>
-      </select>
-    </div>
-    <div
-      v-if="selected == 'Add CbLink'"
-      class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
-      <CurrentLink />
-      <TheDirectory />
-      <SubmitLink />
-    </div>
-
-    <div
-      v-if="selected == 'Latest Links'"
-      class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
-      <LatestLinks />
-    </div>
-
-    <div
-      v-if="selected == 'Directory View'"
-      class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
-      <DirectorySection />
-    </div>
-  </section>
+  <div></div>
 </template>
 
 <script setup>
-import TheDirectory from "../components/TheDirectory.vue";
-import CurrentLink from "../components/shared/CurrentLink.vue";
-import SubmitLink from "../components/SubmitLink.vue";
-import LatestLinks from "../components/LatestLinks.vue";
-import DirectorySection from "../components/DirectorySection.vue";
+import { onMounted } from "vue";
+import { useRoute } from "vue-router";
+const route = useRoute(); // <--- this is the magic line
+const cb = route.params.cb; // (it is reactive)
 
-import { ref } from "vue";
+const longUrl = [];
 
-const tabs = [
-  { name: "Add CbLink", href: "#", current: true },
-  { name: "Directory View", href: "#", current: false },
-  { name: "Latest Links", href: "#", current: false },
-  { name: "Manage Headlin3s", href: "#", current: false },
-  { name: "Notifications", href: "#", current: false },
-  { name: "Contacts", href: "#", current: false },
-  { name: "Spin up a New Instance of the thing", href: "#", current: false },
-];
+const url = `http://localhost:5000/api/v1/links/?shortUrl=${cb}&select=longUrl`;
 
-const selected = ref(tabs[0].name);
-const tabChange = function (tab) {
-  console.log(selected.value);
+const getLink = async () => {
+  const response = await fetch(url);
+  const data = await response.json();
+  const x = data.data;
+  x.forEach((item) => {
+    longUrl.push(item);
+  });
+  console.log(longUrl[0].longUrl);
+  window.location.href = longUrl[0].longUrl;
 };
+
+onMounted(() => {
+  getLink();
+});
 </script>

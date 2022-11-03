@@ -1,5 +1,5 @@
 <template>
-  <h3 class="mx-5 mt-5 capitalize">
+  <h3 class="mx-5 mt-5 capitalize text-gray-500">
     The <span class="text-purple-700">{{ catRoute }}</span> Category
   </h3>
   <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -19,7 +19,7 @@ import { useRoute } from "vue-router";
 import LinkLoop from "../components/dir/LinkLoop.vue";
 import LinkTags from "../components/dir/LinkTags.vue";
 const route = useRoute(); // <--- this is the magic line
-const catRoute = route.params.name; // read parameter id (it is reactive)
+const catRoute = route.params.name; // (it is reactive)
 
 const catLinks = ref([]);
 
