@@ -36,7 +36,6 @@
 </template>
 
 <script setup>
-import { useDark } from "@vueuse/core";
 import TheDirectory from "../components/TheDirectory.vue";
 import CurrentLink from "../components/shared/CurrentLink.vue";
 import SubmitLink from "../components/SubmitLink.vue";

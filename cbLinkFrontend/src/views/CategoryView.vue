@@ -1,5 +1,7 @@
 <template>
-  <h3 class="mx-5 mt-5 capitalize">The {{ catRoute }} Category</h3>
+  <h3 class="mx-5 mt-5 capitalize">
+    The <span class="text-purple-700">{{ catRoute }}</span> Category
+  </h3>
   <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
     <li
       v-for="cat in catLinks"

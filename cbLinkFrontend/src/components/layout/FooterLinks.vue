@@ -66,7 +66,7 @@ const navigation = {
     { name: "Home Page", href: "/" },
     { name: "James' Resume", href: "https://cv.jamesturner.dev/" },
     { name: "James Twitter", href: "https://twitter.com/JamesTurnerDev" },
-    { name: "Top Rated", href: "/top" },
+    { name: "About cb.link", href: "/page/about" },
   ],
   categories: [
     { name: "Technology", href: "/cat/technology" },

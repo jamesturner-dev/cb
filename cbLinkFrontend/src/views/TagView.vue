@@ -1,12 +1,15 @@
 <template>
-  <h3 class="mx-5 mt-5 capitalize">The {{ catRoute }} Category</h3>
+  <h3 class="mx-5 mt-5 capitalize">
+    Links Tagged:
+    <span class="text-purple-700">{{ tagRoute }}</span>
+  </h3>
   <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
     <li
-      v-for="cat in catLinks"
-      :key="cat._id"
+      v-for="tag in tagLinks"
+      :key="tag._id"
       class="col-span-1 divide-y divide-gray-200 dark:divide-gray-900 rounded-lg bg-white dark:bg-black dark:bg-opacity-90 shadow">
-      <LinkLoop :link="cat" />
-      <LinkTags :tags="cat.tags" />
+      <LinkLoop :link="tag" />
+      <LinkTags :tags="tag.tags" />
     </li>
   </ul>
 </template>
