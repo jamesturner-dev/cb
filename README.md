@@ -29,6 +29,6 @@ It needs the config file for connecting to the db, etc. I will figure out what t
 
 - Finalize the route for the short link. As of now it's /cb/:cb and can be improved
 
-- create some homepage content. I think that I'll add directory for now.
+- ~~create some homepage content. I think that I'll add directory for now~~.
 
 - Fix Tags link / endpoint. Maybe make a new route instead of using parms on links?
