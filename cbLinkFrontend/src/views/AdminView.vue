@@ -36,19 +36,19 @@
 </template>
 
 <script setup>
-import TheDirectory from "../components/TheDirectory.vue";
+import TheDirectory from "../components/shared/TheDirectory.vue";
 import CurrentLink from "../components/shared/CurrentLink.vue";
-import SubmitLink from "../components/SubmitLink.vue";
-import LatestLinks from "../components/LatestLinks.vue";
-import DirectorySection from "../components/DirectorySection.vue";
+import SubmitLink from "../components/admin/SubmitLink.vue";
+import LatestLinks from "../components/shared/LatestLinks.vue";
+import DirectorySection from "../components/admin/DirectorySection.vue";
 
 import { ref } from "vue";
 
 const tabs = [
   { name: "Add CbLink", href: "#", current: true },
+  { name: "Update Link", href: "#", current: false },
   { name: "Directory View", href: "#", current: false },
   { name: "Latest Links", href: "#", current: false },
-  { name: "Manage Headlin3s", href: "#", current: false },
   { name: "Notifications", href: "#", current: false },
   { name: "Contacts", href: "#", current: false },
   { name: "Spin up a New Instance of the thing", href: "#", current: false },

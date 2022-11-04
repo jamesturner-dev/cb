@@ -26,7 +26,7 @@
 <script>
 import Header from "./components/layout/TheHeader.vue";
 import Footer from "./components/layout/TheFooter.vue";
-import SearchForm from "./components/SearchForm.vue";
+import SearchForm from "./components/shared/SearchForm.vue";
 
 export default {
   name: "App",

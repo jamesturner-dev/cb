@@ -12,8 +12,8 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import LinkLoop from "./dir/LinkLoop.vue";
-import LinkTags from "./dir/LinkTags.vue";
+import LinkLoop from "../dir/LinkLoop.vue";
+import LinkTags from "../dir/LinkTags.vue";
 
 const latestLinks = ref([]);
 
