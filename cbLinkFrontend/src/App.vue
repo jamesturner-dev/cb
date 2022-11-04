@@ -15,11 +15,8 @@
         <div
           class="p-5 bg-white dark:bg-black dark:bg-opacity-50 dark:border-gray-900 border-r-4 rounded-t-lg">
           <Header />
+          <PublicMenu />
           <router-view :key="$route.fullPath" />
-          <!-- {{ $route.fullPath }}
-          <br />
-          {{ isCB }}
-          <br /> -->
         </div>
       </main>
       <Footer />
@@ -31,6 +28,7 @@
 import Header from "./components/layout/TheHeader.vue";
 import Footer from "./components/layout/TheFooter.vue";
 import SearchForm from "./components/shared/SearchForm.vue";
+import PublicMenu from "./components/shared/PublicMenu.vue";
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 const route = useRoute(); // <--- this is the magic line

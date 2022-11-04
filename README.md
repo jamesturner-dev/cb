@@ -18,3 +18,17 @@ This is in no way, shape, or form finished software. It will be done in due time
 ### This will not run as is from this repository
 
 It needs the config file for connecting to the db, etc. I will figure out what the best practice is for including dummy file(s). Uploading now because I almost broke it without a backup...
+
+### TODO's
+
+- Add Submit Link form.
+
+- Add search feature - I have it written, find it and impliment.
+
+- Figure out that damn current link in the menu, I want to use an object _and_ I want to get current route
+
+- Finalize the route for the short link. As of now it's /cb/:cb and can be improved
+
+- create some homepage content. I think that I'll add directory for now.
+
+- Fix Tags link / endpoint. Maybe make a new route instead of using parms on links?

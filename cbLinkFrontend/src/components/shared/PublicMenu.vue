@@ -1,16 +1,20 @@
 <template>
-  <div class="relative border-b border-gray-200 pb-5">
+  <div class="relative border-b border-gray-200 dark:border-gray-900 pb-5">
     <div class="md:flex md:items-center md:justify-between">
       <div class="mt-3 flex md:absolute md:top-3 md:right-0 md:mt-0">
         <button
+          @click="
+            $router.push({ name: 'UserView', params: { name: 'register' } })
+          "
           type="button"
-          class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
-          Share
+          class="inline-flex items-center rounded-md border border-gray-300 dark:border-gray-800 bg-white dark:bg-black px-2 py-1 text-sm font-medium text-gray-700 shadow-sm hover:bg-purple-600 hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
+          Sign Up
         </button>
         <button
+          @click="$router.push({ name: 'UserView', params: { name: 'login' } })"
           type="button"
-          class="ml-3 inline-flex items-center rounded-md border border-transparent bg-purple-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
-          Create
+          class="ml-3 inline-flex items-center rounded-md border border-transparent bg-purple-600 px-2 py-1 text-sm font-medium text-white shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
+          Login
         </button>
       </div>
     </div>
@@ -48,11 +52,32 @@
 </template>
 
 <script setup>
+import { onMounted } from "vue";
+import { useRoute } from "vue-router";
+import { computed } from "vue";
+const route = useRoute(); // <--- this is the magic line
+const path = computed(() => route.path);
+const isCurrent = (c) => {
+  return c === path.value;
+};
+
+onMounted(() => {
+  console.log(path.value);
+});
+
+const getURL = (id) => {
+  return `/user/${id}`;
+};
+
 const tabs = [
-  { name: "Home", href: "/", current: true },
-  { name: "Admin", href: "/admin", current: false },
-  { name: "Submit Link", href: "#", current: false },
-  { name: "Get A Directory", href: "#", current: false },
-  { name: "Help", href: "/page/help", current: false },
+  { name: "Home", href: "/", current: isCurrent("/") },
+  { name: "Admin", href: "/admin", current: isCurrent("/admin") },
+  { name: "Submit Link", href: "/submit", current: isCurrent("/submit") },
+  {
+    name: "Get A Directory",
+    href: "/user/register",
+    current: isCurrent("/user/register"),
+  },
+  { name: "Help", href: "/page/help", current: isCurrent("/page/help") },
 ];
 </script>
