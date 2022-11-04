@@ -67,7 +67,7 @@ const handleSubmit = async () => {
   const token =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNTk1YmIxMWRjNzNjNjI1ZDA3NGE4MCIsImlhdCI6MTY2NzIzMDI2MSwiZXhwIjoxNjY5ODIyMjYxfQ.RNL88OfTWqOnQg7TJXs_qrzLw_C57VbCzuADVrnLXqQ";
 
-  const tagList = cbTags.value.split(",");
+  const tagList = cbTags.value.split(",").map((e) => e.trim());
 
   const response = await fetch(apiURL, {
     method: "POST",
