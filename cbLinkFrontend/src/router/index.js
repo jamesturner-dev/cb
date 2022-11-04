@@ -1,5 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "../views/HomeView.vue";
+import Cb from "../views/CbLink.vue";
 import Admin from "../views/AdminView.vue";
 import Category from "../views/CategoryView.vue";
 import Tags from "../views/TagView.vue";
@@ -8,9 +9,14 @@ import UserView from "../views/UserView.vue";
 import Page from "../views/PageView.vue";
 const routes = [
   {
-    path: "/:cb",
+    path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/cb/:cb",
+    name: "Cb",
+    component: Cb,
   },
   {
     path: "/Admin",

@@ -2,6 +2,8 @@
 
 ##### I wanted to create a full stack app as a quick resume piece. More of this is how I do things rather than _look at this thing_. I had an idea about tracking all the links from my various enterprises. I then thought that I really should use like a short url type scheme. And maybe share a directory of those links, oh, and lets make it multi-user!
 
+I also wanted to try and use <script setup> </script> and the Composition API all the way through instead of relying on the options API when I didn't know how to do things. In the same vein I wanted to give up my Axios crutch and finally, fully give into fetch...
+
 ### TLDR;
 
 This is in no way, shape, or form finished software. It will be done in due time, however is does show how I do full stack at this point.

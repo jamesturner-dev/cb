@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    {{ cb }}
+  </div>
 </template>
 
 <script setup>
@@ -24,6 +26,6 @@ const getLink = async () => {
 };
 
 onMounted(() => {
-  getLink();
+  // getLink();
 });
 </script>
