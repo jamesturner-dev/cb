@@ -3,7 +3,7 @@
     <div class="flex">
       <div class="flex-1">
         <div class="flex">
-          <a href="/admin" class="flex">
+          <a href="/" class="flex">
             <img
               class="h-24 rounded-full mr-2"
               src="https://imagedelivery.net/jUv0WjkQAcJxE0kRYIap3Q/38e6afbc-8036-4227-a33e-81ad5db8d100/public"
