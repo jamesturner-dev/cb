@@ -7,6 +7,8 @@ import Tags from "../views/TagView.vue";
 import NotFound from "../views/NotFound.vue";
 import UserView from "../views/UserView.vue";
 import Page from "../views/PageView.vue";
+import SearchResults from "../views/SearchResults.vue";
+
 const routes = [
   {
     path: "/",
@@ -42,6 +44,12 @@ const routes = [
     path: "/user/:name",
     name: "UserView",
     component: UserView,
+  },
+  {
+    path: "/search/:searchTerm",
+    // path: "/search/",
+    name: "SearchResults",
+    component: SearchResults,
   },
   {
     path: "/:catchAll(.*)",
