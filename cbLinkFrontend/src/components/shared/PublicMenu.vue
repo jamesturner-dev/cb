@@ -72,7 +72,7 @@ const getURL = (id) => {
 const tabs = [
   { name: "Home", href: "/", current: isCurrent("/") },
   { name: "Admin", href: "/admin", current: isCurrent("/admin") },
-  { name: "Submit Link", href: "/submit", current: isCurrent("/submit") },
+  { name: "Submit Link", href: "/suggest", current: isCurrent("/suggest") },
   {
     name: "Get A Directory",
     href: "/user/register",

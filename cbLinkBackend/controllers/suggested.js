@@ -5,18 +5,14 @@ const SuggestedLink = require("../models/SuggestedLink");
 // ** @desc   Get all suggested links
 // ** @route  GET /api/v1/suggested
 // ** @access Public
-// exports.getSuggestedLinks = asyncHandler(async (req, res, next) => {
-//   if (req.params.linkId) {
-//     const suggestedLinks = await SuggestedLink.find({ directory: req.params.linkId });
-//     return res.status(200).json({
-//       success: true,
-//       count: links.length,
-//       data: links,
-//     });
-//   } else {
-//     res.status(200).json(res.advancedResults);
-//   }
-// });
+exports.getSuggestedLinks = asyncHandler(async (req, res, next) => {
+  const suggestedLinks = await SuggestedLink.find().limit(20);
+
+  return res.status(200).json({
+    success: true,
+    data: suggestedLinks,
+  });
+});
 
 // ** @desc   Get single suggested link
 // ** @route  GET /api/v1/links:shortUrl
@@ -53,11 +49,11 @@ exports.suggestLink = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse("No description provided", 404));
   }
 
-  const suggestedLink = await SuggestedLink.create(req.body);
+  const suggestedLinkResult = await SuggestedLink.create(req.body);
 
   res.status(201).json({
     success: true,
-    data: suggestedLink,
+    data: suggestedLinkResult,
   });
 });
 

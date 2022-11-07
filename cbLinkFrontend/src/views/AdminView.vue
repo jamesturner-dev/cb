@@ -32,6 +32,12 @@
       class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
       <DirectorySection />
     </div>
+
+    <div
+      v-if="selected == 'Suggested Links'"
+      class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
+      <SuggestedLinks />
+    </div>
   </section>
 </template>
 
@@ -41,6 +47,7 @@ import CurrentLink from "../components/shared/CurrentLink.vue";
 import SubmitLink from "../components/admin/SubmitLink.vue";
 import LatestLinks from "../components/shared/LatestLinks.vue";
 import DirectorySection from "../components/admin/DirectorySection.vue";
+import SuggestedLinks from "../components/admin/SuggestedLinks.vue";
 
 import { ref } from "vue";
 
@@ -49,7 +56,7 @@ const tabs = [
   { name: "Update Link", href: "#", current: false },
   { name: "Directory View", href: "#", current: false },
   { name: "Latest Links", href: "#", current: false },
-  { name: "Notifications", href: "#", current: false },
+  { name: "Suggested Links", href: "#", current: false },
   { name: "Contacts", href: "#", current: false },
   { name: "Spin up a New Instance of the thing", href: "#", current: false },
 ];

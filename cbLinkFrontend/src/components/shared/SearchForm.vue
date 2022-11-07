@@ -20,7 +20,7 @@
               name="desktop-search-field"
               id="desktop-search-field"
               class="h-full w-full dark:bg-black border-transparent py-2 pl-8 pr-3 text-sm text-gray-900 dark:text-gray-600 placeholder-gray-500 focus:border-transparent focus:placeholder-gray-400 focus:outline-none focus:ring-0 sm:block"
-              placeholder="Search the Salty Ape Empire"
+              placeholder="Search cb.link"
               v-model="searchTerm"
               @keyup.enter="siteSearch"
               type="search" />
@@ -35,7 +35,7 @@
             on-click="siteSearch()"
             class="h-6 w-6"
             aria-hidden="true" />
-          <span class="sr-only">Search Salty Ape</span>
+          <span class="sr-only">Search cb.link</span>
         </button>
       </div>
     </div>

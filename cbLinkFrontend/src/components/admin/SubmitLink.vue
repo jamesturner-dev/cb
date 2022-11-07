@@ -1,16 +1,15 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { Switch, SwitchGroup, SwitchLabel } from "@headlessui/vue";
-import { onMounted } from "vue";
 import swal from "sweetalert2";
+
 const similarAndRelated = ref(true);
 const cbTitle = ref("");
 const cbDescription = ref("");
 const cbURL = ref("");
-
+const cbTags = ref("");
 const latestLinks = ref([]);
 const selectedSimilar = ref(latestLinks[0]);
-const cbTags = ref("");
 
 const cats = [
   "technology",

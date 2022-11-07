@@ -21,7 +21,7 @@ It needs the config file for connecting to the db, etc. I will figure out what t
 
 ### TODO's
 
-- Add Submit Link form.
+- ~~Add Submit Link form~~.
 
 - ~~Add search feature - I have it written, find it and impliment~~.
 

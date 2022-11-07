@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from "vue";
-import { onMounted } from "vue";
 import swal from "sweetalert2";
 
 const cbTitle = ref("");
@@ -88,7 +87,6 @@ const handleSubmit = async () => {
         confirmButtonText: "Cool",
       })
       .then(() => {
-        // push to home page
         window.location.href = "/";
       });
   } catch (error) {
@@ -99,14 +97,6 @@ const handleSubmit = async () => {
 const fireLogger = () => {
   console.log(`${currentCat.value}`);
 };
-
-onMounted(() => {
-  try {
-    // getLatestLinks();
-  } catch (error) {
-    console.log(error);
-  }
-});
 </script>
 
 <template>
