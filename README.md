@@ -25,10 +25,14 @@ It needs the config file for connecting to the db, etc. I will figure out what t
 
 - ~~Add search feature - I have it written, find it and impliment~~.
 
-- Figure out that damn current link in the menu, I want to use an object _and_ I want to get current route
-
-- Finalize the route for the short link. As of now it's /cb/:cb and can be improved
+- Figure out that damn current link in the menu, I want to use an object _and_ I want to get current route. It works sometimes but there is a SPA deal issue?
 
 - ~~create some homepage content. I think that I'll add directory for now~~.
 
 - Fix Tags link / endpoint. Maybe make a new route instead of using parms on links?
+
+<!-- to be clear this *works* now, but it's janky   -->
+<!-- for instance /cb/VyV => google.com but lets move to backend -->
+
+- Finalize the route for the short link. As of now it's /cb/:cb and can be improved
+- shortLink lookup / redirect function. How much tracking beyond click count?
