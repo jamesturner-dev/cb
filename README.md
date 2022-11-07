@@ -31,8 +31,7 @@ It needs the config file for connecting to the db, etc. I will figure out what t
 
 - Fix Tags link / endpoint. Maybe make a new route instead of using parms on links?
 
-<!-- to be clear this *works* now, but it's janky   -->
-<!-- for instance /cb/VyV => google.com but lets move to backend -->
+`to be clear this *works* now, but it's janky for instance /cb/VyV => google.com but lets move to backend `
 
 - Finalize the route for the short link. As of now it's /cb/:cb and can be improved
 - shortLink lookup / redirect function. How much tracking beyond click count?
