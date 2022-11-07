@@ -17,6 +17,7 @@ const users = require("./routes/users");
 const count = require("./routes/count");
 const shortUrl = require("./routes/shortUrl");
 const search = require("./routes/search");
+const suggested = require("./routes/suggested");
 
 const app = express();
 
@@ -46,6 +47,7 @@ app.use("/api/v1/users", users);
 app.use("/api/v1/count", count);
 app.use("/api/v1/shortUrl", shortUrl);
 app.use("/api/v1/search", search);
+app.use("/api/v1/suggested", suggested);
 
 app.use(errorHandler);
 

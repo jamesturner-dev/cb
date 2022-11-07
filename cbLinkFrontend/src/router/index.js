@@ -8,6 +8,7 @@ import NotFound from "../views/NotFound.vue";
 import UserView from "../views/UserView.vue";
 import Page from "../views/PageView.vue";
 import SearchResults from "../views/SearchResults.vue";
+import SuggestLink from "../views/SuggestLink.vue";
 
 const routes = [
   {
@@ -50,6 +51,11 @@ const routes = [
     // path: "/search/",
     name: "SearchResults",
     component: SearchResults,
+  },
+  {
+    path: "/suggest",
+    name: "SuggestLink",
+    component: SuggestLink,
   },
   {
     path: "/:catchAll(.*)",
