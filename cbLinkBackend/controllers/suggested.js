@@ -33,7 +33,7 @@ exports.getSuggestedLinks = asyncHandler(async (req, res, next) => {
 // });
 
 // ** @desc   Suggest new link
-// ** @route  POST /api/v1/links/suggest
+// ** @route  POST /api/v1/suggest
 // ** @access Public
 
 exports.suggestLink = asyncHandler(async (req, res, next) => {
@@ -57,32 +57,32 @@ exports.suggestLink = asyncHandler(async (req, res, next) => {
   });
 });
 
-// ** @desc   delete link
+// ** @desc   delete suggestedLink
 // ** @route  DELETE /api/v1/links/:id
 // ** @access Private
 
-// exports.deleteSuggestedLink = asyncHandler(async (req, res, next) => {
-//   const link = await SuggestedLink.findById(req.params.id);
+exports.deleteSuggestedLink = asyncHandler(async (req, res, next) => {
+  const link = await SuggestedLink.findById(req.params.id);
 
-//   if (!link) {
-//     return next(
-//       new ErrorResponse(`Link not found with id of ${req.params.id}`, 404)
-//     );
-//   }
+  if (!link) {
+    return next(
+      new ErrorResponse(`Link not found with id of ${req.params.id}`, 404)
+    );
+  }
 
-//   if (link.user.toString() !== req.user.id && req.user.role !== "admin") {
-//     return next(
-//       new ErrorResponse(
-//         `User ${req.user.id} is not authorized to delet link ${link._id}`,
-//         401
-//       )
-//     );
-//   }
+  if (link.user.toString() !== req.user.id && req.user.role !== "admin") {
+    return next(
+      new ErrorResponse(
+        `User ${req.user.id} is not authorized to delet link ${link._id}`,
+        401
+      )
+    );
+  }
 
-//   await link.remove();
+  await link.remove();
 
-//   res.status(201).json({
-//     success: true,
-//     data: {},
-//   });
-// });
+  res.status(201).json({
+    success: true,
+    data: {},
+  });
+});

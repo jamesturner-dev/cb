@@ -11,6 +11,9 @@
             What is this all about then?
           </span>
         </h1>
+        <img
+          class="h-64 mx-auto mt-8"
+          src="https://imagedelivery.net/jUv0WjkQAcJxE0kRYIap3Q/38e6afbc-8036-4227-a33e-81ad5db8d100/public" />
         <p class="mt-5 text-xl leading-8 text-gray-500">
           Not too long ago I got fired from my job.
           <span class="text-purple-700"> Without cause</span>. The worst part

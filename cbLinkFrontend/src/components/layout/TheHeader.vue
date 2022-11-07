@@ -5,20 +5,20 @@
         <div class="flex">
           <a href="/" class="flex">
             <img
-              class="h-24 rounded-full mr-2"
-              src="https://imagedelivery.net/jUv0WjkQAcJxE0kRYIap3Q/38e6afbc-8036-4227-a33e-81ad5db8d100/public"
+              class="h-12 mr-2"
+              src="https://imagedelivery.net/jUv0WjkQAcJxE0kRYIap3Q/d452e93d-ae61-44d5-9b0c-dba19a7f2500/public"
               alt="Salt Ape's cb.link" />
           </a>
           <div>
             <h1
-              class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
+              class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300 -mb-1">
               cb<span class="text-purple-700">.</span>link by
               <span class="text-purple-700">Salty</span>Ap3
             </h1>
             <a
-              class="text-gray-500 hover:text-black dark:hover:text-white"
+              class="text-gray-500 text-sm hover:text-black dark:hover:text-white"
               href="https://github.com/jamesturner-dev/cb"
-              >The Github Repository</a
+              >(The Github Repository is here)</a
             >
           </div>
         </div>
