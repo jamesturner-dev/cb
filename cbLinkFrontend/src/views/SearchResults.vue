@@ -1,16 +1,41 @@
 <template>
   <section>
-    <div class="m-10" v-for="(link, i) in returnedLinks" :key="i">
-      <a :href="link.longUrl" class="text-xl textLink">{{ link.title }}</a>
+    <ul role="list" class="divide-y divide-gray-200 mt-5">
+      <li v-for="(link, i) in returnedLinks" :key="i" class="py-4">
+        <div class="ml-3">
+          <p class="text-sm font-medium text-gray-900 dark:text-gray-600">
+            <a
+              :href="link.longUrl"
+              class="text-xl hover:text-purple-600 textLink">
+              {{ link.title }}
+            </a>
+          </p>
 
-      <p class="py-5">
-        {{ link.description }}
-      </p>
-    </div>
+          <p class="text-xs text-gray-400">
+            <a :href="getURL(link.category)">
+              Filed under:
+              <span class="text-purple-600">{{ link.category }}</span>
+            </a>
+            &nbsp; . &nbsp;
+            <!-- This kinda thing has caused issued in the past so I used a function, but so far... -->
+            Created on {{ link.createdAt.slice(0, 10) }}
+            &nbsp; . &nbsp; Rated:
+            <span class="text-purple-600">
+              {{ link.rating }}
+            </span>
+          </p>
+          <p class="text-sm text-gray-500 dark:text-gray-300">
+            {{ link.description }}
+          </p>
+        </div>
+      </li>
+    </ul>
   </section>
 </template>
 
 <script setup>
+import LinkTags from "../components/dir/LinkTags.vue";
+import LinkLoop from "../components/dir/LinkLoop.vue";
 import { ref } from "vue";
 import { onMounted } from "vue";
 import { useRoute } from "vue-router";
@@ -40,6 +65,10 @@ const getSearchedLinks = async () => {
   lyst.forEach((item) => {
     returnedLinks.value.push(item);
   });
+};
+
+const getURL = (id) => {
+  return `/cat/${id}`;
 };
 
 onMounted(() => {

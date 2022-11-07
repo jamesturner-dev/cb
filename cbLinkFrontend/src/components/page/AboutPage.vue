@@ -14,8 +14,8 @@
         <p class="mt-5 text-xl leading-8 text-gray-500">
           Not too long ago I got fired from my job.
           <span class="text-purple-700"> Without cause</span>. The worst part
-          about it is that I could not continue working on the project I was the
-          sole developer on. You know, it was
+          about it was that I could not continue working on the project I was
+          the sole developer on. You know, it was
           <span class="text-purple-700">my</span> project.
         </p>
 
