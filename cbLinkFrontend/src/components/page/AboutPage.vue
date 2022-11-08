@@ -31,10 +31,9 @@
           <a class="text-purple-700" href="https://headlin3s.com">
             Headlin3s
           </a>
-          but I wanted to create something new and fresh. That did things the
-          way I wanted them to be done each step of the way. I also wanted to
-          create something that I could get posted before my severance ran out
-          as a resume piece.
+          but I wanted to create something new and fresh the way I wanted to do
+          it. I also wanted to create something that I could get posted before
+          my severance ran out as a resume piece.
         </p>
 
         <p class="text-gray-500 mt-5">

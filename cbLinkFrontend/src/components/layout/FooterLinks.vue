@@ -3,16 +3,12 @@
     <div class="grid grid-cols-2 gap-8 xl:col-span-4">
       <div class="md:grid md:grid-cols-2 md:gap-8">
         <div>
-          <h3 class="text-sm font-medium text-neutral-400">The Nav:</h3>
-          <ul role="list" class="mt-4 space-y-4">
-            <li v-for="item in navigation.internal" :key="item.name">
-              <a
-                :href="item.href"
-                class="px-2 text-sm dark:text-neutral-400 dark:hover:text-white text-neutral-500 hover:text-neutral-900">
-                {{ item.name }}
-              </a>
-            </li>
-          </ul>
+          <a href="/" class="flex">
+            <img
+              class="h-32 mr-2"
+              src="https://imagedelivery.net/jUv0WjkQAcJxE0kRYIap3Q/38e6afbc-8036-4227-a33e-81ad5db8d100/public"
+              alt="Salt Ape's cb.link" />
+          </a>
         </div>
 
         <div class="mt-12 md:mt-0">
@@ -81,9 +77,9 @@ const navigation = {
     { name: "User Help", href: "/page/help" },
   ],
   external: [
-    { name: "Ambiguous Redirect", href: "https://ambiguousredirect.com/" },
+    { name: "Salty Resume", href: "https://cv.jamesturner.dev/" },
+    { name: "Salty Twitter", href: "https://twitter.com/SaltyAp3" },
     { name: "Tweet 'O the Day", href: "https://tweetotheday.com" },
-    { name: "Got A Link?", href: "https://gotal.ink" },
     { name: "Headlin3s", href: "https://headlin3s.com" },
   ],
 };

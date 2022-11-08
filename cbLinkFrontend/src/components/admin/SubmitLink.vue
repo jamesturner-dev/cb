@@ -29,6 +29,9 @@ const cats = [
   "services",
   "travel",
   "social",
+  "politics",
+  "people",
+  "software",
   "other",
 ];
 
@@ -98,7 +101,8 @@ const handleSubmit = async () => {
         confirmButtonText: "Cool",
       })
       .then(() => {
-        window.location.reload();
+        // window.location.reload();
+        console.log("reload");
       });
   } catch (error) {
     console.log(error);

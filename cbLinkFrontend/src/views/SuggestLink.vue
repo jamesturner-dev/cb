@@ -25,6 +25,9 @@ const cats = [
   "services",
   "travel",
   "social",
+  "politics",
+  "people",
+  "software",
   "other",
 ];
 
@@ -100,6 +103,17 @@ const fireLogger = () => {
 </script>
 
 <template>
+  <div class="mx-auto my-5">
+    <h1>
+      <span class="block text-sm font-semibold text-purple-700">
+        Have a link you think we might like?
+      </span>
+      <span
+        class="block text-2xl font-bold leading-8 tracking-tight text-gray-600">
+        Suggest a cb.link
+      </span>
+    </h1>
+  </div>
   <form>
     <dl>
       <div class="grid grid-cols-3 gap-3 mt-5 pt-2">

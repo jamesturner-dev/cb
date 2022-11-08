@@ -78,6 +78,6 @@ const tabs = [
     href: "/user/register",
     current: isCurrent("/user/register"),
   },
-  { name: "Help", href: "/page/help", current: isCurrent("/page/help") },
+  { name: "About", href: "/page/about", current: isCurrent("/page/about") },
 ];
 </script>
