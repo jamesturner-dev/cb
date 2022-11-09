@@ -24,7 +24,7 @@
         <select
           id="current-tab"
           name="current-tab"
-          class="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-purple-500 focus:outline-none focus:ring-purple-500 sm:text-sm">
+          class="block w-full rounded-md border-gray-300 dark:border-gray-700 py-2 pl-3 pr-10 text-base focus:border-purple-500 focus:outline-none focus:ring-purple-500 sm:text-sm">
           <option v-for="tab in tabs" :key="tab.name" :selected="tab.current">
             {{ tab.name }}
           </option>
@@ -39,7 +39,7 @@
             :class="[
               tab.current
                 ? 'border-purple-500 text-purple-600'
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
+                : 'border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-400 hover:border-gray-300 dark:hover:border-gray-800',
               'whitespace-nowrap pb-4 px-1 border-b-2 font-medium text-sm',
             ]"
             :aria-current="tab.current ? 'page' : undefined"
