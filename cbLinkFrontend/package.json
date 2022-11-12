@@ -1,8 +1,9 @@
 {
-  "name": "cblinkfrontend",
+  "name": "cblink-frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.5",
   "type": "module",
+  "author": "James Turner Dev",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

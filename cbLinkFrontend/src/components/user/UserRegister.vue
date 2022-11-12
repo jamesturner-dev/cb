@@ -7,7 +7,7 @@
           Register a new account.
         </h2>
         <p class="mt-2 text-center text-sm text-neutral-600">
-          There are {{ freeSpotsRemaing }} free spots remaining.
+          There are {{ freeSpotsRemaing }} free directories remaining.
         </p>
       </div>
       <form @submit.prevent="" class="mt-8 space-y-6">
@@ -100,13 +100,34 @@ export default {
       name: "",
       confirmPassword: "",
       token: "",
-      freeSpotsRemaing: 40,
+      freeSpotsRemaing: null,
     };
   },
-  props: ["tags"],
+
   components: {},
-  mounted() {},
+
+  mounted() {
+
+    this.getCatLinks()
+
+  },
+  
   methods: {
+
+    async getCatLinks () {
+    const response = await fetch("http://localhost:5000/api/v1/count/users");
+    const data = await response.json();
+    
+    if(data.data < 40){
+      this.freeSpotsRemaing = 40 - data.data
+    } else {
+      this.freeSpotsRemaing = 0
+    }
+
+
+
+},
+
     async register() {
       if (this.password !== this.confirmPassword) {
         this.errors.push("Passwords do not match");
@@ -142,7 +163,7 @@ export default {
       console.log(this.token);
       // localStorage.setItem("token", this.token);
       if (this.token) {
-        this.$router.push({ name: "home" });
+        this.$router.push({ name: "Home" });
       }
     },
   },
