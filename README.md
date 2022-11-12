@@ -31,6 +31,8 @@ It needs the config file for connecting to the db, etc. I will figure out what t
 
 - Fix Tags link / endpoint. Maybe make a new route instead of using parms on links?
 
+- make components out of the files that are still large.
+
 - look up the count records the right way...  tbh it's faster this way :/
 
 - **The Short URL Dealio**

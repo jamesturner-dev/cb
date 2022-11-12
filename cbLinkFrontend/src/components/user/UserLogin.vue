@@ -9,7 +9,7 @@
         <p class="mt-2 text-center text-sm text-neutral-600">
           Or
           {{ " " }}
-          <a href="#" class="font-medium text-violet-800 hover:text-indigo-500">
+          <a href="/user/register" class="font-medium text-violet-800 hover:text-indigo-500">
             sign up today to create a directory
           </a>
         </p>
@@ -44,26 +44,11 @@
         </div>
 
         <div class="flex items-center justify-between">
-          <div class="flex items-center">
-            <input
-              id="remember-me"
-              name="remember-me"
-              type="checkbox"
-              class="h-4 w-4 rounded border-neutral-300 text-indigo-600 focus:ring-indigo-500" />
-            <label
-              for="remember-me"
-              class="ml-2 block text-sm text-neutral-300">
-              Remember me
-            </label>
-          </div>
 
-          <div class="text-sm">
-            <a
-              href="/user/forgot"
-              class="font-medium text-indigo-600 hover:text-indigo-500">
-              Forgot your password?
-            </a>
-          </div>
+          <RememberMe />
+
+          <MemberLink :login=true />
+
         </div>
 
         <div>
@@ -82,6 +67,8 @@
 </template>
 
 <script>
+import MemberLink from './MemberLink.vue';
+import RememberMe from './RememberMe.vue';
 export default {
   data: function () {
     return {
@@ -92,7 +79,7 @@ export default {
     };
   },
   props: ["tags"],
-  components: {},
+  components: { MemberLink, RememberMe },
   mounted() {},
   methods: {
     async login() {

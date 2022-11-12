@@ -64,9 +64,6 @@ export default {
     </label>
   </div>
 
-
   </div>
-  
-
   
 </template>
