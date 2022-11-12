@@ -1,24 +1,61 @@
 const crypto = require("crypto");
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
+const Counter = require("../models/Counter");
+
 const sendEmail = require("../utils/sendEmail");
 const User = require("../models/User");
+
+const getCount = async () => {
+  const record = "6370899a43779d0c6b5dc7d4";
+  const counter = await Counter.findById(record);
+
+  if (!counter) {
+    console.log("No counter found.");
+    return "Error: counter not found";
+  }
+
+  console.log("Counter found."); 
+  console.log(counter.count);
+
+  let { count } = counter;
+  count += 1;
+  const update = { count: count };
+  let result = await Counter.findByIdAndUpdate(record, update);
+
+  if (!result) {
+    console.log("Counter not updated.");
+    return "Error - Update failed";
+  }
+
+  console.log("Count: " + count);
+
+  return count;
+};
 
 // ** @desc   Register user
 // ** @route  POST /api/v1/auth/register
 // ** @access Public
 exports.register = asyncHandler(async (req, res, next) => {
-  const { name, email, password, role } = req.body;
 
-  // Create user
-  const user = await User.create({
-    name,
-    email,
-    password,
-    role,
-  });
+  const { name, email, password, role } = req.body;
+  if (!name || !email || !password) {
+    return next(new ErrorResponse("Please provide all required fields", 400));
+  }
+
+  const user = await User.create({ name, email, password, role });
+  if (!user) {
+    return next(new ErrorResponse("Registration Failed", 401));
+  }
+  
+  const count = await getCount();
+  if (!count) {
+    return next(new ErrorResponse("Could not retrieve previous user count", 404));
+  }
+  console.log("Count: " + count);
 
   sendTokenResponse(user, 200, res);
+  
 });
 
 // ** @desc   user login
