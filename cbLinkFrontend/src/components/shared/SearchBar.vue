@@ -1,5 +1,5 @@
 <script>
-// import router from '../../router';
+
 /* eslint-disable */
 import { SearchIcon } from '@heroicons/vue/solid'
 export default {
@@ -15,60 +15,9 @@ export default {
 
   components: { SearchIcon},
 
-  mounted() {
-
-
-  },
-
   methods: {
     search: function () {
       window.location.href = `/search/${this.searchTerm}`;
-
-      // if(this.picked=="document"){
-
-      //   const api = "http://localhost:5001/api/documentSearch";
-    
-      //   this.axios
-      //     .post(api, {searchTerm: this.searchTerm})
-      //     .then(response => {
-      //       this.searchData = response.data.projects;
-      //       this.searchData.forEach(doc => {
-      //         doc.href = `/project/${doc.safeName}`;
-      //         doc.editRef = `/create/document/edit/${doc.safeName}`;   
-      //         this.docCount++;
-      //       });
-      //     });
-      //     this.$router.push({
-      //       name: 'SearchResults',
-      //       params: {
-      //         searchData: this.searchData,
-      //       },
-      //     });
-
-      // }else{
-
-      //   const api = "http://localhost:5001/api/projectSearch";
-    
-      //   this.axios
-      //     .post(api, {searchTerm: this.searchTerm})
-      //     .then(response => {
-      //       this.searchData = response.data.projects;
-
-      //     });
-      //     this.$router.push({
-      //       name: 'SearchResults',
-      //       params: {
-      //         searchData: this.searchData,
-      //       },
-      //     });
-
-      // }
-
-
-
-
-
-     
     },
   },
 
@@ -80,7 +29,6 @@ export default {
   <div class="lg:static lg:ml-1 xl:col-span-6 lg:w-full md:w-96">
     
     <div class="fullWrap">
-    <!-- {{picked}} -->
       <label for="search" class="sr-only">Search</label>
     
       <div class="relative ml-5 w-full">
