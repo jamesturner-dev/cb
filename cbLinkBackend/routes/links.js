@@ -6,6 +6,7 @@ const {
   addLink,
   updateLink,
   deleteLink,
+  getLinkById,
 } = require("../controllers/links");
 
 const Link = require("../models/Link");
@@ -29,5 +30,7 @@ router
   .get(getLink)
   .put(protect, authorize("publisher", "admin"), updateLink)
   .delete(protect, authorize("publisher", "admin"), deleteLink);
+
+router.route("/byId/:id").get(getLinkById);
 
 module.exports = router;

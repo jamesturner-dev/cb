@@ -40,6 +40,28 @@ exports.getLink = asyncHandler(async (req, res, next) => {
   });
 });
 
+
+
+// ** @desc   Get single link by Id
+// ** @route  GET /api/v1/links/byId/:id
+// ** @access Public
+exports.getLinkById = asyncHandler(async (req, res, next) => {
+  const link = await Link.findById( req.params.id );
+
+  if (!link) {
+    return next(
+      new ErrorResponse(`Link not found with id of ${req.params.id}`, 404)
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    data: link,
+  });
+});
+
+
+
 // ** @desc   Create new link
 // ** @route  POST /api/v1/directories/:DirectoryId/links
 // ** @access Private
