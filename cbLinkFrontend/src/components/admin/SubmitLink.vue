@@ -101,8 +101,7 @@ const handleSubmit = async () => {
         confirmButtonText: "Cool",
       })
       .then(() => {
-        // window.location.reload();
-        console.log("reload");
+        window.location.reload();
       });
   } catch (error) {
     console.log(error);

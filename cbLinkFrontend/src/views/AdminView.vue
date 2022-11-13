@@ -1,43 +1,40 @@
 <template>
   <section>
     <div class="mt-5 tabs w-100">
-      <select
-        v-model="selected"
-        @change="tabChange()"
+      <select v-model="selected" @change="tabChange()"
         class="w-90 rounded-md border border-gray-200 dark:border-gray-900 dark:bg-black dark:text-gray-300">
-        <option
-          v-for="tab in tabs"
-          :value="tab.name"
-          class="text-gray-600 dark:bg-black">
+        <option v-for="tab in tabs" :value="tab.name" class="text-gray-600 dark:bg-black">
           {{ tab.name }}
         </option>
       </select>
     </div>
-    <div
-      v-if="selected == 'Add CbLink'"
+    <div v-if="selected == 'Add CbLink'" 
       class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
       <CurrentLink />
       <TheDirectory />
       <SubmitLink />
     </div>
 
-    <div
-      v-if="selected == 'Latest Links'"
+    <div v-if="selected == 'Latest Links'" 
       class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
       <LatestLinks />
     </div>
 
-    <div
-      v-if="selected == 'Directory View'"
+    <div v-if="selected == 'Directory View'" 
       class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
       <DirectorySection />
     </div>
 
-    <div
-      v-if="selected == 'Suggested Links'"
+    <div v-if="selected == 'Suggested Links'" 
       class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
       <SuggestedLinks />
     </div>
+
+    <div v-if="selected == 'Edit Link'" 
+      class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
+      <EditLink />
+    </div>
+
   </section>
 </template>
 
@@ -48,7 +45,7 @@ import SubmitLink from "../components/admin/SubmitLink.vue";
 import LatestLinks from "../components/admin/LatestLinks.vue";
 import DirectorySection from "../components/admin/DirectorySection.vue";
 import SuggestedLinks from "../components/admin/SuggestedLinks.vue";
-
+import EditLink from "../components/admin/EditLink.vue";
 import { ref } from "vue";
 
 const tabs = [
@@ -57,7 +54,7 @@ const tabs = [
   { name: "Directory View", href: "#", current: false },
   { name: "Latest Links", href: "#", current: false },
   { name: "Suggested Links", href: "#", current: false },
-  { name: "Contacts", href: "#", current: false },
+  { name: "Edit Link", href: "#", current: false },
   { name: "Spin up a New Instance of the thing", href: "#", current: false },
 ];
 

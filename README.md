@@ -43,3 +43,5 @@ It needs the config file for connecting to the db, etc. I will figure out what t
 
 - Finalize the route for the short link. As of now it's /cb/:cb and can be improved
 - shortLink lookup / redirect function. How much tracking beyond click count?
+
+- Make Darkmode extend 100% vertical.
