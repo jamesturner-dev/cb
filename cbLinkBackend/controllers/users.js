@@ -1,34 +1,7 @@
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
-const Counter = require("../models/Counter");
+const getCount = require("../utils/getCount");
 const User = require("../models/User");
-
-const getCount = async () => {
-  const record = "6370899a43779d0c6b5dc7d2";
-  const counter = await Counter.findById(record);
-
-  if (!counter) {
-    console.log("No counter found.");
-    return "Error: counter not found";
-  }
-
-  console.log("Counter found."); 
-  console.log(counter.count);
-
-  let { count } = counter;
-  count += 1;
-  const update = { count: count };
-  let result = await Counter.findByIdAndUpdate(record, update);
-
-  if (!result) {
-    console.log("Counter not updated.");
-    return "Error - Update failed";
-  }
-
-  console.log("Count: " + count);
-
-  return count;
-};
 
 // ** @desc   Get all users
 // ** @route  Get /api/v1/auth/users
@@ -58,7 +31,7 @@ exports.getUser = asyncHandler(async (req, res, next) => {
 exports.createUser = asyncHandler(async (req, res, next) => {
 
   console.log("Create user");
-  const count = await getCount();
+  const count = await getCount("user");
 
   if (!count) {
     return next(new ErrorResponse("Could not retrieve previous user count", 404));

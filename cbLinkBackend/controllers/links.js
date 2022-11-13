@@ -2,7 +2,7 @@ const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
 const Link = require("../models/Link");
 const Directory = require("../models/Directory");
-const getCount = require("../utils/linkCount");
+const getCount = require("../utils/getCount");
 const getShortURL = require ("../utils/shortUrl");
 
 // ** @desc   Get all links
@@ -45,7 +45,7 @@ exports.getLink = asyncHandler(async (req, res, next) => {
 // ** @access Private
 
 exports.addLink = asyncHandler(async (req, res, next) => {
-  const count = await getCount();
+  const count = await getCount("link");
   if (!count) {
     return next(new ErrorResponse("Could not retrieve previous count", 404));
   }

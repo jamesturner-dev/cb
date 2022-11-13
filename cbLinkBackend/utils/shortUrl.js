@@ -1,7 +1,7 @@
 const getShortURL = (n) => {
-  let charMap =
+  const charMap =
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
-  let shortUrl = [];
+  const shortUrl = [];
 
   while (n) {
     shortUrl.push(charMap[n % 64]);
