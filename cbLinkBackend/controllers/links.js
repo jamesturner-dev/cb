@@ -2,42 +2,8 @@ const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
 const Link = require("../models/Link");
 const Directory = require("../models/Directory");
-const Counter = require("../models/Counter");
-
-const getShortURL = (n) => {
-  let charMap =
-    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
-  let shortUrl = [];
-
-  while (n) {
-    shortUrl.push(charMap[n % 64]);
-    n = Math.floor(n / 64);
-  }
-
-  return shortUrl.join("");
-};
-
-const getCount = async () => {
-  const record = "635a98d4b233907564ff06ae";
-  const counter = await Counter.findById(record);
-
-  if (!counter) {
-    console.log("No counter found.");
-    return "Error: counter not found";
-  }
-
-  let { count } = counter;
-  count += 1;
-  const update = { count: count };
-  let result = await Counter.findByIdAndUpdate(record, update);
-
-  if (!result) {
-    console.log("Counter not updated.");
-    return "Error - Update failed";
-  }
-
-  return count;
-};
+const getCount = require("../utils/linkCount");
+const getShortURL = require ("../utils/shortUrl");
 
 // ** @desc   Get all links
 // ** @route  GET /api/v1/links
