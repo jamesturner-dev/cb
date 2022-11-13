@@ -26,7 +26,7 @@ export default {
 
 <template>
   
-  <div class="lg:static lg:ml-1 xl:col-span-6 lg:w-full md:w-96">
+  <section>
     
     <div class="fullWrap">
       <label for="search" class="sr-only">Search</label>
@@ -64,6 +64,6 @@ export default {
     </label>
   </div>
 
-  </div>
+</section>
   
 </template>

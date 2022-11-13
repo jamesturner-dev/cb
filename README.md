@@ -33,6 +33,8 @@ It needs the config file for connecting to the db, etc. I will figure out what t
 
 - make components out of the files that are still large.
 
+- SUNDAY MORNING: Add the edit link admin component.
+
 - look up the count records the right way...  tbh it's faster this way :/
 
 - **The Short URL Dealio**
