@@ -5,7 +5,7 @@ const Counter = require("../models/Counter");
 // ** @desc   Get link count
 // ** @route  GET /api/v1/count
 // ** @access Public
-exports.getCount = asyncHandler(async (req, res, next) => {
+exports.getLinkCount = asyncHandler(async (req, res, next) => {
   const counter = await Counter.findById("635a98d4b233907564ff06ae");
   console.log(counter);
 
