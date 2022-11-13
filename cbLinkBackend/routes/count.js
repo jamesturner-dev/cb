@@ -1,7 +1,10 @@
 const express = require("express");
-const { getCount } = require("../controllers/count");
+const { getLinkCount } = require("../controllers/count");
 const router = express.Router();
 
-router.route("/").get(getCount);
+// the default route gets the overall link count
+router.route("/").get(getLinkCount);
+
+router.
 
 module.exports = router;
