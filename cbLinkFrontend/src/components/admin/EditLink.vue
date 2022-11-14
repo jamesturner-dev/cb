@@ -1,46 +1,38 @@
 <script setup>
-import { ref, onMounted } from "vue";
+// Next thing to try https://www.thisdot.co/blog/vue-3-composition-api-watch-and-watcheffect
+import { ref, onMounted, watch } from "vue";
 import swal from "sweetalert2";
 const latestLinks = ref([]);
 const selectedLink = ref(latestLinks[0]);
-const cbLink = ref({
-  title: "",
-  description: "",
-  url: "",
-  tags: [],
-  category: "",
-  clicks: null,
-  rating: null,
-  similar: [],
-  related: [],
+var title = ref("");
+var cbLink = ref({
 });
 
 const toggleLinkChosen = ref(false);
 
-const chooseLink = function () {
+const chooseLink = async () => {
+
+  const getSelectedURL = `http://localhost:5000/api/v1/links/ById/${selectedLink.value}`;
+
+  const response = await fetch(getSelectedURL);
+  const data = await response.json();
+  cbLink = data.data;
+  title = cbLink.title;
+  console.log(title)
+  document.getElementById("url").setAttribute('value','My default value');
+
   toggleLinkChosen.value = true;
 };
 
 const handleEdit = async () => {
 
-  console.log("handle edit");
 
-  const getSelectedURL = `http://localhost:5000/api/v1/links/${selectedLink.value}`;
-  console.log(`selectedLink.value: ${selectedLink.value}`);
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNTk1YmIxMWRjNzNjNjI1ZDA3NGE4MCIsImlhdCI6MTY2NzIzMDI2MSwiZXhwIjoxNjY5ODIyMjYxfQ.RNL88OfTWqOnQg7TJXs_qrzLw_C57VbCzuADVrnLXqQ";
+   // this seems extra, without it results vary...
+  // lyst.forEach((item) => {
+  //   latestLinks.value.push(item);
+  // });
 
-    const getSeletedResponse = await fetch(getSelectedURL, {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      "Content-type": "application/json",
-      Authorization: `Bearer ${token}`,
-    }
-
-  });
-
-  console.log(`getSeletedResponse: ${getSeletedResponse.data}`);
+    
 
 };
 
@@ -148,8 +140,10 @@ onMounted(() => {
           <dd class="flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
             <span class="flex-grow">
               <input type="text"
+                id="url"
                 class="cblink-input border-2 bg-white border-gray-300 dark:bg-black dark:bg-opacity-95 dark:border-gray-800 dark:text-gray-600"
-                v-model="selectedLink.longUrl" />
+                :value="cbLink.longUrl"
+                 />
             </span>
           </dd>
         </div>
@@ -160,7 +154,8 @@ onMounted(() => {
             <span class="flex-grow">
               <input type="text"
                 class="cblink-input border-2 bg-white border-gray-300 dark:bg-black dark:bg-opacity-95 dark:border-gray-800 dark:text-gray-600 cblink-input"
-                v-model="selectedLink.title" />
+                v-model.lazy="title" 
+                />
             </span>
           </dd>
         </div>

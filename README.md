@@ -1,12 +1,12 @@
-## THIS IS NOT READY FOR THE WORLD
+## What's this all about then?
 
-##### I wanted to create a full stack app as a quick resume piece. More of this is how I do things rather than _look at this thing_. I had an idea about tracking all the links from my various enterprises. I then thought that I really should use like a short url type scheme. And maybe share a directory of those links, oh, and lets make it multi-user!
+##### I wanted to create a full stack app as a quick resume piece. More of this is how I do things rather than _look at this thing_. I had an idea about tracking all the links from my various enterprises. I then thought that I really should use like a short url type scheme. And maybe a directory of those links, oh, and lets make it multi-user!
 
-I also wanted to try and use <script setup> </script> and the Composition API all the way through instead of relying on the options API when I didn't know how to do things. In the same vein I wanted to give up my Axios crutch and finally, fully give into fetch...
+I also wanted to try and use <script setup> </script> and the Composition API all the way through instead of relying on the options API when I didn't know how to do things. In the same vein I wanted to give up my Axios crutch and finally, fully, give into fetch...
 
 ### TLDR;
 
-This is in no way, shape, or form finished software. It will be done in due time, however is does show how I do full stack at this point.
+This shows how I do full stack at this point.
 
 #### Tools / Tech
 
@@ -15,9 +15,13 @@ This is in no way, shape, or form finished software. It will be done in due time
 - [MongoDb](https://www.mongodb.com/)
 - [Mongoose](https://mongoosejs.com/)
 
-### This will not run as is from this repository
+### _config
 
-It needs the config file for connecting to the db, etc. I will figure out what the best practice is for including dummy file(s). Uploading now because I almost broke it without a backup...
+You need to rename the _config file config and fill it out with your info.  If you have done this kinda thing before this should make sense to you? This is the first iteration of this config idea, so bare with me as I will error on the side of caution.
+
+I'm currently working on the edit link section so if it's wonky, it's under construction.
+
+Once that is done change into each directory ( front end and backend ) run npm install in each, and then npm run dev to start them each up.  I figure out something less clumsy.
 
 ### TODO's
 
