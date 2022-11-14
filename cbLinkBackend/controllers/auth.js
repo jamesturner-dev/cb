@@ -2,31 +2,8 @@ const crypto = require("crypto");
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
 const getCount = require("../utils/getCount");
-
 const sendEmail = require("../utils/sendEmail");
 const User = require("../models/User");
-
-// const getCount = async () => {
-//   const record = "6370899a43779d0c6b5dc7d4";
-//   const counter = await Counter.findById(record);
-
-//   if (!counter) {
-//     console.log("No counter found.");
-//     return "Error: counter not found";
-//   }
-
-//   let { count } = counter;
-//   count += 1;
-//   const update = { count: count };
-//   let result = await Counter.findByIdAndUpdate(record, update);
-
-//   if (!result) {
-//     console.log("Counter not updated.");
-//     return "Error - Update failed";
-//   }
-
-//   return count;
-// };
 
 // ** @desc   Register user
 // ** @route  POST /api/v1/auth/register
@@ -63,14 +40,12 @@ exports.login = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse("Provide email and password", 400));
   }
 
-  // Check for user
   const user = await User.findOne({ email }).select("+password");
 
   if (!user) {
     return next(new ErrorResponse("Invalid credentials", 401));
   }
 
-  // Check if password matches
   const isMatch = await user.matchPassword(password);
 
   if (!isMatch) {

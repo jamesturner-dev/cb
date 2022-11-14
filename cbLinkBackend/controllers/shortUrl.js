@@ -6,14 +6,14 @@ const Link = require("../models/Link");
 // ** @route  GET /api/v1/shortUrl
 // ** @access Public
 exports.shortUrl = asyncHandler(async (req, res, next) => {
-  const u = req.params.shortUrl;
+  const url = req.params.shortUrl;
 
-  if (!u) {
+  if (!url) {
     return next(new ErrorResponse(`Request Param Failed`, 400));
   }
 
-  const link = await Link.find({ shortUrl: u });
-  console.log(u);
+  const link = await Link.find({ shortUrl: url });
+
   if (!link) {
     return next(
       new ErrorResponse(

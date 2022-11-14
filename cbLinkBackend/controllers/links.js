@@ -41,7 +41,6 @@ exports.getLink = asyncHandler(async (req, res, next) => {
 });
 
 
-
 // ** @desc   Get single link by Id
 // ** @route  GET /api/v1/links/byId/:id
 // ** @access Public
@@ -59,8 +58,6 @@ exports.getLinkById = asyncHandler(async (req, res, next) => {
     data: link,
   });
 });
-
-
 
 // ** @desc   Create new link
 // ** @route  POST /api/v1/directories/:DirectoryId/links

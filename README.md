@@ -21,9 +21,11 @@ You need to rename the _config file config and fill it out with your info.  If y
 
 I'm currently working on the edit link section so if it's wonky, it's under construction.
 
-Once that is done change into each directory ( front end and backend ) run npm install in each, and then npm run dev to start them each up.  I figure out something less clumsy.
+Once that is done change into each directory ( front end and backend ) run npm install in each, and then npm run dev to start them each up.  I will figure out something less clumsy as time permits.
 
 ### TODO's
+
+- decide how to do the tokens.  I don't want to use local storage, use the cookie.
 
 - ~~Add Submit Link form~~.
 
