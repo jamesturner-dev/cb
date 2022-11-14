@@ -19,20 +19,12 @@ const chooseLink = async () => {
   cbLink = data.data;
   title = cbLink.title;
   console.log(title)
-  document.getElementById("url").setAttribute('value','My default value');
-
   toggleLinkChosen.value = true;
 };
 
+
+
 const handleEdit = async () => {
-
-
-   // this seems extra, without it results vary...
-  // lyst.forEach((item) => {
-  //   latestLinks.value.push(item);
-  // });
-
-    
 
 };
 
@@ -80,8 +72,8 @@ const handleEdit = async () => {
 const getLatestLinks = async () => {
   const response = await fetch("http://localhost:5000/api/v1/links");
   const data = await response.json();
-  const lyst = data.data;
-  lyst.forEach((item) => {
+  const _lyst = data.data;
+  _lyst.forEach((item) => {
     latestLinks.value.push(item);
   });
 };
@@ -124,7 +116,6 @@ onMounted(() => {
           </select>
         </div>
       </dd>
-
 
       <button type="button" @click="chooseLink"
         class="rounded-md bg-white dark:bg-gray-900 px-1 py-0.5 font-medium text-purple-600 hover:bg-purple-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">

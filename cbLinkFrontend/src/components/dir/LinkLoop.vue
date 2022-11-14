@@ -17,7 +17,6 @@
         {{ link.description }}
       </p>
       <div class="text-xs text-gray-400">
-        <!-- This kinda thing has caused issued in the past so I used a function, but so far... -->
         Created on {{ link.createdAt.slice(0, 10) }} . Rated:
         <span class="text-purple-600">
           {{ link.rating }}
