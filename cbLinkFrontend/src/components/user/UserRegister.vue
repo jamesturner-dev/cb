@@ -1,9 +1,9 @@
 <template>
-  <div class="flex min-h-full items-center justify-center px-5">
+  <div class="cbWrap">
     <div class="w-full max-w-md space-y-8">
       <div>
-        <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-neutral-500">
-          Register a new account.
+        <h2 class="mt-6 text-center text-2xl font-bold tracking-tight text-neutral-500">
+          Register a new account
         </h2>
         <p class="mt-2 text-center text-sm text-neutral-600">
           There are {{ freeSpotsRemaing }} free directories remaining.

@@ -2,7 +2,7 @@
   <div v-if="isCB">
     <main class="flex-1 relative mx-auto max-w-4xl mt-5">
       <div
-        class="p-5 bg-white dark:bg-black dark:bg-opacity-50 dark:border-gray-900 border-r-4 rounded-t-lg">
+        class="cbContain dark:bg-black dark:bg-opacity-50 dark:border-gray-900">
         <router-view :key="$route.fullPath" />
       </div>
     </main>
@@ -13,7 +13,7 @@
       <SearchForm />
       <main class="flex-1 relative mx-auto max-w-4xl mt-5">
         <div
-          class="p-5 bg-white dark:bg-black dark:bg-opacity-50 dark:border-gray-900 border-r-4 rounded-t-lg">
+          class="cbContain dark:bg-black dark:bg-opacity-50 dark:border-gray-900">
           <Header />
           <PublicMenu />
           <router-view :key="$route.fullPath" />

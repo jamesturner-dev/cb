@@ -48,6 +48,8 @@ exports.suggestLink = asyncHandler(async (req, res, next) => {
   if (!req.body.description) {
     return next(new ErrorResponse("No description provided", 404));
   }
+  
+  req.body.user = "63595bb11dc73c625d074a80";
 
   const suggestedLinkResult = await SuggestedLink.create(req.body);
 
@@ -58,7 +60,7 @@ exports.suggestLink = asyncHandler(async (req, res, next) => {
 });
 
 // ** @desc   delete suggestedLink
-// ** @route  DELETE /api/v1/links/:id
+// ** @route  DELETE /api/v1/suggested/:id
 // ** @access Private
 
 exports.deleteSuggestedLink = asyncHandler(async (req, res, next) => {
@@ -70,14 +72,16 @@ exports.deleteSuggestedLink = asyncHandler(async (req, res, next) => {
     );
   }
 
-  if (link.user.toString() !== req.user.id && req.user.role !== "admin") {
-    return next(
-      new ErrorResponse(
-        `User ${req.user.id} is not authorized to delet link ${link._id}`,
-        401
-      )
-    );
-  }
+  console.log(link);
+
+  // if ( req.user.role !== "admin") {
+  //   return next(
+  //     new ErrorResponse(
+  //       `User ${req.user.id} is not authorized to delet link ${link._id}`,
+  //       401
+  //     )
+  //   );
+  // }
 
   await link.remove();
 

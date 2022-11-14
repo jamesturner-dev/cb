@@ -6,22 +6,21 @@ const latestLinks = ref([]);
 const getLatestLinks = async () => {
   const response = await fetch("http://localhost:5000/api/v1/links");
   const data = await response.json();
-  const lyst = data.data;
-  lyst.forEach((item) => {
+  const _lyst = data.data;
+  _lyst.forEach((item) => {
     latestLinks.value.push(item);
   });
 };
 
 const deleteLink = async (id) => {
-  console.log(id);
 
   Swal.fire({
     title: "Are you sure?",
     text: `Delete link with id: ${id}?`,
     icon: "warning",
     showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
+    confirmButtonColor: "#5c048a",
+    cancelButtonColor: "#ae01ff",
     confirmButtonText: "Yes, delete it!",
   }).then(async (result) => {
     if (result.isConfirmed) {
@@ -29,15 +28,17 @@ const deleteLink = async (id) => {
       const token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNTk1YmIxMWRjNzNjNjI1ZDA3NGE4MCIsImlhdCI6MTY2NzIzMDI2MSwiZXhwIjoxNjY5ODIyMjYxfQ.RNL88OfTWqOnQg7TJXs_qrzLw_C57VbCzuADVrnLXqQ";
 
-      const response = await fetch(apiURL, {
+      const requestOptions = {
         method: "DELETE",
         headers: {
           Accept: "application/json",
           "Content-type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-      });
-      Swal.fire("Deleted!", result, "success");
+      }
+
+      const response = await fetch(apiURL, requestOptions);
+      Swal.fire("Deleted!", result.toString(), "success");
     }
   });
 };
