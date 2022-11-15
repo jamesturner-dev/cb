@@ -28,6 +28,11 @@ Once that is done change into each directory ( front end and backend ) run npm i
 - decide how to do the tokens.  I don't want to use local storage, use the cookie.
 
 - ~~Add Submit Link form~~.
+- ~~Remove all vestiges of axios~~.
+
+- Make sure I'm using the composition API <script setup> throughout.
+
+- Ensure that all fetch calls are standarized.
 
 - ~~Add search feature - I have it written, find it and impliment~~.
 
@@ -39,7 +44,7 @@ Once that is done change into each directory ( front end and backend ) run npm i
 
 - make components out of the files that are still large.
 
-- SUNDAY MORNING: Add the edit link admin component.
+- Finish the edit link admin component.
 
 - look up the count records the right way...  tbh it's faster this way :/
 
@@ -48,3 +53,7 @@ Once that is done change into each directory ( front end and backend ) run npm i
 - shortLink lookup / redirect function. How much tracking beyond click count?
 
 - Make Darkmode extend 100% vertical.
+
+- ~~make the darkmode button a toggle.~~
+
+- add custom classes where appropriate.

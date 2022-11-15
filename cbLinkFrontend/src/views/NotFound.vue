@@ -1,9 +1,7 @@
 <template>
   <div class="py-20 px-5 grid place-items-center">
     <main class="mx-auto max-w-max sm:flex">
-      <p class="responseCode">
-        404
-      </p>
+      <p class="responseCode"> 404 </p>
       <div class="ml-5">
         <ContentHeading :content = "content" />
         <BigButtons  />

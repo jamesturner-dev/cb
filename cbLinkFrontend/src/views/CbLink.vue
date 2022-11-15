@@ -3,9 +3,7 @@
   <div v-else class="py-20 px-5 grid place-items-center">
     <div class="mx-auto max-w-max">
       <main class="sm:flex">
-        <p class="responseCode">
-          404
-        </p>
+        <p class="responseCode"> 418 </p>
         <div class="sm:ml-6">
           <ContentHeading :content = "content" />
           <BigButtons  />
@@ -37,8 +35,7 @@ const getLink = async () => {
   }
 };
 
-// ok, I have not figured out how to impliment type yet,
-// but I think it is a good idea?
+// ok, I have not figured out how to impliment type yet...
 const content = [
   {
     type: "h1",
