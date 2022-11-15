@@ -2,8 +2,7 @@
   <div class="flex w-full items-center justify-between space-x-6 p-5">
     <div class="flex-1 truncate">
       <div class="flex items-center space-x-3">
-        <h3
-          class="truncate text-sm font-medium text-gray-900 dark:text-gray-400">
+        <h3 class="truncate text-sm font-medium text-gray-900 dark:text-gray-400">
           <a :href="link.longUrl">{{ link.title }}</a>
         </h3>
         <span

@@ -1,8 +1,7 @@
 <template>
   <div v-if="isCB">
     <main class="flex-1 relative mx-auto max-w-4xl mt-5">
-      <div
-        class="cbContain dark:bg-black dark:bg-opacity-50 dark:border-gray-900">
+      <div class="cbContain dark:bg-black dark:bg-opacity-50 dark:border-gray-900">
         <router-view :key="$route.fullPath" />
       </div>
     </main>
@@ -12,8 +11,7 @@
     <div class="min-h-full dark:bg-black dark:bg-opacity-95">
       <SearchForm />
       <main class="flex-1 relative mx-auto max-w-4xl mt-5">
-        <div
-          class="cbContain dark:bg-black dark:bg-opacity-50 dark:border-gray-900">
+        <div class="cbContain dark:bg-black dark:bg-opacity-50 dark:border-gray-900">
           <Header />
           <PublicMenu />
           <router-view :key="$route.fullPath" />
@@ -32,15 +30,12 @@ import PublicMenu from "./components/shared/PublicMenu.vue";
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 const route = useRoute(); // <--- this is the magic line
-const cb = route.params.cb; // (it is reactive)
-const routePath = route.path;
-const currentRoute = route.currentRoute;
 const isCB = ref(false);
 
 onMounted(() => {
   if (route.fullPath.includes("/cb/")) {
     isCB.value = true;
-    console.log("isCB: ", isCB.value);
+    // console.log("isCB: ", isCB.value);
   }
 });
 </script>

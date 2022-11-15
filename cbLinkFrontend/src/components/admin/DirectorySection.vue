@@ -1,7 +1,6 @@
 <template>
   <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-    <li
-      v-for="link in latestLinks"
+    <li v-for="link in latestLinks"
       :key="link._id"
       class="col-span-1 divide-y divide-gray-200 dark:divide-gray-900 rounded-lg bg-white dark:bg-black dark:bg-opacity-90 shadow">
       <LinkLoop :link="link" />
