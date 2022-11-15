@@ -17,9 +17,9 @@
             </h1>
             <a
               class="text-gray-500 text-sm hover:text-black dark:hover:text-white"
-              href="https://github.com/jamesturner-dev/cb"
-              >(The Github Repository is here)</a
-            >
+              href="https://github.com/jamesturner-dev/cb">
+              (<span class="text-xs">The Github Repository is Here</span>)
+            </a>
           </div>
         </div>
       </div>

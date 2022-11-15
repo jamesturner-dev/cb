@@ -15,8 +15,7 @@
           <h3 class="text-sm font-medium text-neutral-400">Categories:</h3>
           <ul role="list" class="mt-4 space-y-4">
             <li v-for="item in navigation.categories" :key="item.name">
-              <a
-                :href="item.href"
+              <a :href="item.href"
                 class="px-2 text-sm dark:text-neutral-400 dark:hover:text-white text-neutral-500 hover:text-neutral-900">
                 {{ item.name }}
               </a>
@@ -30,8 +29,7 @@
           <h3 class="text-sm font-medium text-neutral-400">Users:</h3>
           <ul role="list" class="mt-4 space-y-4">
             <li v-for="item in navigation.friends" :key="item.name">
-              <a
-                :href="item.href"
+              <a :href="item.href"
                 class="px-2 py-1 text-sm dark:text-neutral-400 dark:hover:text-white text-neutral-500 hover:text-neutral-900">
                 {{ item.name }}
               </a>
@@ -43,14 +41,14 @@
           <h3 class="text-sm font-medium text-neutral-400">External:</h3>
           <ul role="list" class="mt-4 space-y-4">
             <li v-for="item in navigation.external" :key="item.name">
-              <a
-                :href="item.href"
+              <a :href="item.href"
                 class="px-2 py-1 text-sm dark:text-neutral-400 dark:hover:text-white text-neutral-500 hover:text-neutral-900">
                 {{ item.name }}
               </a>
             </li>
           </ul>
         </div>
+
       </div>
     </div>
   </div>
