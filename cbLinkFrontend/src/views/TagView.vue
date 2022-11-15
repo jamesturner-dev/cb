@@ -29,8 +29,8 @@ const tagUrl = `http://localhost:5000/api/v1/links/?tags=${tagRoute}`;
 const getTagLinks = async () => {
   const response = await fetch(tagUrl);
   const data = await response.json();
-  const lyst = data.data;
-  lyst.forEach((item) => {
+  const _lyst = data.data;
+  _lyst.forEach((item) => {
     tagLinks.value.push(item);
   });
 };

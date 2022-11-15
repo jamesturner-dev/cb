@@ -1,0 +1,12 @@
+<template>
+  <div class="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
+    <a href="/"
+      class="bigButton bg-purple-600 text-white shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
+      Go back home
+    </a>
+    <a href="/page/help"
+      class="bigButton bg-purple-100 text-purple-700 hover:bg-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
+      Get Some Help
+    </a>
+  </div>
+</template>
