@@ -21,8 +21,4 @@ defineProps({
     required: true,
   },
 });
-
-const getURL = (id) => {
-  return `/tag/${id}`;
-};
 </script>
