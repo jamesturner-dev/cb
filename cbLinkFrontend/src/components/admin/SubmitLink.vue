@@ -65,7 +65,7 @@ const handleSubmit = async () => {
     return;
   }
 
-  const apiURL = `http://localhost:5000/api/v1/dir/63596b8b96fc5870f9bbfbf3/links`;
+  const apiURL = `/api/v1/dir/63596b8b96fc5870f9bbfbf3/links`;
   const token =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNTk1YmIxMWRjNzNjNjI1ZDA3NGE4MCIsImlhdCI6MTY2NzIzMDI2MSwiZXhwIjoxNjY5ODIyMjYxfQ.RNL88OfTWqOnQg7TJXs_qrzLw_C57VbCzuADVrnLXqQ";
 
@@ -109,7 +109,7 @@ const handleSubmit = async () => {
 };
 
 const getLatestLinks = async () => {
-  const response = await fetch("http://localhost:5000/api/v1/links");
+  const response = await fetch("/api/v1/links");
   const data = await response.json();
   const lyst = data.data;
   lyst.forEach((item) => {

@@ -23,7 +23,7 @@ const catRoute = route.params.name; // (it is reactive)
 
 const catLinks = ref([]);
 
-const catUrl = `http://localhost:5000/api/v1/links/?category=${catRoute}`;
+const catUrl = `/api/v1/links/?category=${catRoute}`;
 
 const getCatLinks = async () => {
   const response = await fetch(catUrl);

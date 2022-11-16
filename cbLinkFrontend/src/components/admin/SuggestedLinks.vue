@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const suggestedLinks = ref([]);
 
 const getsuggestedLinks = async () => {
-  const response = await fetch("http://localhost:5000/api/v1/suggested");
+  const response = await fetch("/api/v1/suggested");
   const data = await response.json();
   const _lyst = data.data;
   _lyst.forEach((item) => {
@@ -24,7 +24,7 @@ const deleteLink = async (id) => {
     confirmButtonText: "Yes, delete it!",
   }).then(async (result) => {
     if (result.isConfirmed) {
-      const apiURL = `http://localhost:5000/api/v1/suggested/${id}`;
+      const apiURL = `/api/v1/suggested/${id}`;
       const token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNTk1YmIxMWRjNzNjNjI1ZDA3NGE4MCIsImlhdCI6MTY2NzIzMDI2MSwiZXhwIjoxNjY5ODIyMjYxfQ.RNL88OfTWqOnQg7TJXs_qrzLw_C57VbCzuADVrnLXqQ";
 

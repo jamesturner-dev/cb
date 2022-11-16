@@ -21,7 +21,7 @@ import { useRoute } from "vue-router";
 
 const route = useRoute(); // <--- this is the magic line
 const cb = route.params.cb; // (it is reactive)
-const url = `http://localhost:5000/api/v1/links/?shortUrl=${cb}&select=longUrl`;
+const url = `/api/v1/links/?shortUrl=${cb}&select=longUrl`;
 const valid = ref(true);
 
 const getLink = async () => {

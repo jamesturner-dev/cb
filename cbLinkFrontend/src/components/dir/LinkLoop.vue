@@ -6,7 +6,7 @@
           <a :href="link.longUrl">{{ link.title }}</a>
         </h3>
         <span
-          class="cursor-pointer inline-block flex-shrink-0 rounded-full bg-purple-100 px-2 py-0.5 text-xs font-medium text-purple-800 hover:bg-purple-500 hover:text-white hover:dark:bg-purple-700 dark:bg-purple-800 dark:text-purple-100">
+          class="cursor-pointer inline-block flex-shrink-0 rounded-full bg-purple-100 px-2 py-0.5 text-xs text-purple-800 hover:bg-purple-500 hover:text-white hover:dark:bg-purple-700 dark:bg-purple-800 dark:text-purple-100">
           <a :href="getURL(link.category)">
             {{ link.category }}
           </a>

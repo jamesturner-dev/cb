@@ -67,7 +67,7 @@ export default {
       };
 
       const response = await fetch(
-        "http://localhost:5000/api/v1/auth/forgotpassword",
+        "/api/v1/auth/forgotpassword",
         requestOptions
       );
       const data = await response.json();

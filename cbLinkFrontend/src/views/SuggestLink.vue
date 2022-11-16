@@ -61,7 +61,7 @@ const handleSubmit = async () => {
     return;
   }
 
-  const apiURL = `http://localhost:5000/api/v1/suggested`;
+  const apiURL = `/api/v1/suggested`;
   const tagList = cbTags.value.split(",").map((e) => e.trim());
 
   const response = await fetch(apiURL, {

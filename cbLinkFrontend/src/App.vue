@@ -35,7 +35,6 @@ const isCB = ref(false);
 onMounted(() => {
   if (route.fullPath.includes("/cb/")) {
     isCB.value = true;
-    // console.log("isCB: ", isCB.value);
   }
 });
 </script>

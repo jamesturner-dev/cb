@@ -25,8 +25,9 @@
           <ChevronUpIcon :class="open ? 'rotate-180 transform' : ''" class="h-5 w-5 text-purple-500" />
         </DisclosureButton>
         <DisclosurePanel class="p-5 pb-2 text-sm text-gray-500">
-          <p class="mb-5"> Sure. I do consulting for BTC. You can
-            <a href="#" class="text-purple-700">click here</a> to book a session with me. I can help you with your
+          <p class="mb-5"> Sure. I do consulting. 
+            You can
+            <a href="https://commerce.coinbase.com/checkout/5699e4ab-924d-4ad5-affb-daf2e64afd8c" class="text-purple-700">click here</a> to book a session with me. I can help you with your
             project, or just answer questions about the code.
           </p>
         </DisclosurePanel>

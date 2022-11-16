@@ -15,7 +15,7 @@ export default {
 
   methods: {
     async getMe() {
-      const apiURL = "http://localhost:5000/api/v1/auth/me";
+      const apiURL = "/api/v1/auth/me";
       const token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0MiIsImlhdCI6MTY2NDcxMTI2NywiZXhwIjoxNjY3MzAzMjY3fQ.BTPTz77tbKwJ3oNAjrKjrT3YcqssHWSSX41HDxOvv2s";
       const response = await fetch(apiURL, {

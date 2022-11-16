@@ -1,5 +1,4 @@
 <script setup>
-// Next thing to try https://www.thisdot.co/blog/vue-3-composition-api-watch-and-watcheffect
 import { ref, onMounted, watch } from "vue";
 import swal from "sweetalert2";
 const latestLinks = ref([]);
@@ -12,7 +11,7 @@ const toggleLinkChosen = ref(false);
 
 const chooseLink = async () => {
 
-  const getSelectedURL = `http://localhost:5000/api/v1/links/ById/${selectedLink.value}`;
+  const getSelectedURL = `/api/v1/links/ById/${selectedLink.value}`;
 
   const response = await fetch(getSelectedURL);
   const data = await response.json();
@@ -70,7 +69,7 @@ const handleEdit = async () => {
 
 
 const getLatestLinks = async () => {
-  const response = await fetch("http://localhost:5000/api/v1/links");
+  const response = await fetch("/api/v1/links");
   const data = await response.json();
   const _lyst = data.data;
   _lyst.forEach((item) => {
