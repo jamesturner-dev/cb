@@ -70,4 +70,27 @@ body {
   font-size: 0.875rem/* 14px */;
   line-height: 1.25rem/* 20px */;
   font-weight: 500;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.primary{
+  background-color: rgb(147 51 234);
+  color: rgb(255 255 255);
+
+}
+
+.primary:hover{
+  background-color: rgb(126 34 206);
+  color: rgb(255 255 255);
+}
+
+.secondary{
+  background-color: rgb(243 232 255);
+  color: rgb(126 34 206);
+}
+
+.secondary:hover{
+  background-color: rgb(233 213 255);
+  color: rgb(80, 9, 142);
 }

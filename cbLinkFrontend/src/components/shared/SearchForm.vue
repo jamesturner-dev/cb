@@ -7,7 +7,7 @@
         <form class="flex w-full md:ml-0" @submit.prevent="siteSearch">
           <label for="search-field" class="sr-only">Search</label>
           <div
-            class="ml-2 relative w-full text-gray-400 dark:bg-black focus-within:text-gray-600">
+            class="ml-2 relative w-full text-gray-300 dark:text-gray-800  ">
             <div
               class="pointer-events-none absolute inset-y-0 left-2 flex items-center dark:bg-black">
               <MagnifyingGlassCircleIcon
@@ -18,7 +18,7 @@
             <input
               name="desktop-search-field"
               id="desktop-search-field"
-              class="h-full w-full dark:bg-black border-transparent py-2 pl-8 pr-3 text-gray-900 dark:text-gray-600 placeholder-gray-300 dark:placeholder-gray-800 focus:border-transparent focus:placeholder-gray-400 focus:outline-none focus:ring-0 sm:block"
+              class=" h-full w-full dark:bg-black border-transparent py-2 pl-8 pr-3 text-gray-900 dark:text-gray-600 placeholder-gray-300 dark:placeholder-gray-800 focus:border-transparent focus:placeholder-gray-400 focus:outline-none focus:ring-0 sm:block"
               placeholder="Search cb.link"
               v-model="searchTerm"
               @keyup.enter="siteSearch"
