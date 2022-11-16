@@ -31,6 +31,36 @@
           </p>
         </DisclosurePanel>
       </Disclosure>
+      <Disclosure as="div" class="mt-2" v-slot="{ open }">
+        <DisclosureButton
+          class="flex w-full justify-between rounded-lg bg-purple-100 dark:bg-opacity-10 dark:text-gray-600 px-4 py-2 text-left text-sm font-medium text-purple-900  hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+          <span>What are Directories?</span>
+          <ChevronUpIcon :class="open ? 'rotate-180 transform' : ''" class="h-5 w-5 text-purple-500" />
+        </DisclosureButton>
+        <DisclosurePanel class="p-5 pb-2 text-sm text-gray-500">
+          <p class="mb-5">
+            Directories are a way to organize your links. You can create a directory for
+            your favorite websites, or for your favorite topics. You can also create
+            directories for your friends and family. You can even create a directory for
+            your favorite links on cb.link.
+          </p>
+        </DisclosurePanel>
+      </Disclosure>
+      <Disclosure as="div" class="mt-2" v-slot="{ open }">
+        <DisclosureButton
+          class="flex w-full justify-between rounded-lg bg-purple-100 dark:bg-opacity-10 dark:text-gray-600 px-4 py-2 text-left text-sm font-medium text-purple-900  hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+          <span>Is cb.link Finished?</span>
+          <ChevronUpIcon :class="open ? 'rotate-180 transform' : ''" class="h-5 w-5 text-purple-500" />
+        </DisclosureButton>
+        <DisclosurePanel class="p-5 pb-2 text-sm text-gray-500">
+          <p class="mb-5">
+            No.  I am still working on it. I am adding new features all the time. If you would like to see a new feature, or
+            have a suggestion, please let me know.  If you would like to help out
+             <a class="text-purple-500" href="https://github.com/jamesturner-dev/cb">grab a copy of the source</a>
+               and get hacking.
+          </p>
+        </DisclosurePanel>
+      </Disclosure>
     </div>
   </div>
 
