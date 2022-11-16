@@ -6,9 +6,19 @@ const Link = require("../models/Link");
 // ** @route  POST /api/v1/search
 // ** @access Public
 exports.searchLinks = asyncHandler(async (req, res, next) => {
-  const { searchTerm } = req.body;
+  var { searchTerm } = req.body;
 
   if (searchTerm) {
+
+    const stopWords = [
+      'and', 'or', 'this', 'fuck', 'the', "if", "find", "that",
+      "then", "else", "when", "where", "how", "all", "any", "both",
+      "each", "few", "more", "most", "other", "some", "such", "no",
+    ];
+
+    searchTerm = searchTerm.replace(new RegExp('\\b('+stopWords.join('|')+')\\b', 'g'), '');
+
+    console.log(searchTerm);
 
     const links = [];
 

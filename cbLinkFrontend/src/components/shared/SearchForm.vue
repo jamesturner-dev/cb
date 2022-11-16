@@ -43,12 +43,11 @@
 import { ref } from "vue";
 import { ChevronDoubleRightIcon } from "@heroicons/vue/24/outline";
 import { MagnifyingGlassCircleIcon } from "@heroicons/vue/20/solid";
-import Swal from "sweetalert2";
 const searchTerm = ref("");
 
 const siteSearch = () => {
   if(searchTerm){
-    console.log("searching");
+    console.log(`searching: ${searchTerm.value}`);
     window.location.href = `/search/${searchTerm.value}`;
   } 
 };

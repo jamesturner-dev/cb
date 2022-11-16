@@ -7,6 +7,7 @@ const returnedLinks = ref([]);
 const linkCount = ref([]);
 
 const getSearchedLinks = async () => {
+
   const requestOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -21,11 +22,15 @@ const getSearchedLinks = async () => {
   );
 
   const data = await response.json();
-  linkCount.value.push(data.count);
-  const lyst = data.data;
-  lyst.forEach((item) => {
+
+  if(data.count !=0){
+    linkCount.value.push(data.count);
+  const _lyst = data.data;
+  _lyst.forEach((item) => {
     returnedLinks.value.push(item);
   });
+  }
+
 };
 
 const getURL = (id) => {
@@ -42,7 +47,9 @@ onMounted(() => {
 </script>
 <template>
   <section>
-    <h3 class="mt-5 ml-3">{{ linkCount[0] }} Search Results</h3>
+    <h3 class="mt-5 ml-3 dark:text-gray-500">
+      {{ linkCount[0] }} Search Results
+    </h3>
     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-800 mt-5">
       <li v-for="(link, i) in returnedLinks" :key="i" class="py-4">
         <div class="ml-3">

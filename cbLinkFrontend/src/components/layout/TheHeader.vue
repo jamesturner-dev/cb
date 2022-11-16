@@ -10,8 +10,7 @@
           </a>
           <div>
             <h1 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300 -mb-1">
-              cb
-              <span class="text-purple-700">.</span>link by
+              cb<span class="text-purple-700">.</span>link by
               <span class="text-purple-700">Salty</span>Ap3
             </h1>
             <a class="text-gray-500 text-sm hover:text-black dark:hover:text-white"
