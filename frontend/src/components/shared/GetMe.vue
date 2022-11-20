@@ -1,43 +1,20 @@
 <template>
   <section class="pt-4 text-sm mr-2 leading-3 text-neutral-600">
-    {{ me }}
+   wtf
   </section>
 </template>
 
 <script>
+import { useCookies } from "vue3-cookies";
 export default {
-  data: function () {
-    return {
-      errors: [],
-      me: null,
-    };
-  },
-
-  methods: {
-    async getMe() {
-      const apiURL = "/api/v1/auth/me";
-      const token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0MiIsImlhdCI6MTY2NDcxMTI2NywiZXhwIjoxNjY3MzAzMjY3fQ.BTPTz77tbKwJ3oNAjrKjrT3YcqssHWSSX41HDxOvv2s";
-      const response = await fetch(apiURL, {
-        method: "GET",
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${token}`, // notice the Bearer before your token
-        },
-      });
-      const data = await response.json();
-      console.log(data);
-      this.me = data.data.name;
-    },
+  setup() {
+    const { cookies } = useCookies();
+    return { cookies };
   },
 
   mounted() {
-    try {
-      this.getMe();
-    } catch (err) {
-      console.log(err);
-      this.errors.push(err);
-    }
-  },
+    let my_cookie_value = this.cookies.get("token");
+    console.log(my_cookie_value);
+  }
 };
 </script>

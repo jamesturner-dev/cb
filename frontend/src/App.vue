@@ -23,6 +23,7 @@
 </template>
 
 <script setup>
+
 import Header from "./components/layout/TheHeader.vue";
 import Footer from "./components/layout/TheFooter.vue";
 import SearchForm from "./components/shared/SearchForm.vue";
@@ -37,4 +38,8 @@ onMounted(() => {
     isCB.value = true;
   }
 });
+
+
+
+
 </script>
