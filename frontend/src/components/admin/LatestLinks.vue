@@ -1,7 +1,11 @@
 <script setup>
 import { ref, onMounted } from "vue";
+import { useCookies } from '@vueuse/integrations/useCookies'
 import Swal from "sweetalert2";
+
 const latestLinks = ref([]);
+const { get } = useCookies(['token'], { doNotParse: false, autoUpdateDependencies: false })
+const cookieToken = get('token')
 
 const getLatestLinks = async () => {
   const response = await fetch("/api/v1/links");
@@ -25,15 +29,13 @@ const deleteLink = async (id) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
       const apiURL = `/api/v1/links/${id}`;
-      const token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNTk1YmIxMWRjNzNjNjI1ZDA3NGE4MCIsImlhdCI6MTY2NzIzMDI2MSwiZXhwIjoxNjY5ODIyMjYxfQ.RNL88OfTWqOnQg7TJXs_qrzLw_C57VbCzuADVrnLXqQ";
 
       const requestOptions = {
         method: "DELETE",
         headers: {
           Accept: "application/json",
           "Content-type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${cookieToken}`,
         },
       }
 
@@ -55,8 +57,7 @@ onMounted(() => {
 <template>
   <section>
     <ul v-for="link in latestLinks" :key="link._id">
-      <li
-        class="border-b border-gray-300 dark:border-gray-900 p-3 w-100 dark:bg-black dark:text-white bg-white">
+      <li class="border-b border-gray-300 dark:border-gray-900 p-3 w-100 dark:bg-black dark:text-white bg-white">
         <a class="p-2" :href="link.longUrl">{{ link.title }}</a> - short url:
         <span class="text-purple-300 font-bold">{{ link.shortUrl }}</span>
         <span

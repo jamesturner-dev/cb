@@ -43,7 +43,7 @@ import TheDirectory from "../components/shared/TheDirectory.vue";
 import CurrentLink from "../components/shared/CurrentLink.vue";
 import SubmitLink from "../components/admin/SubmitLink.vue";
 import LatestLinks from "../components/admin/LatestLinks.vue";
-import DirectorySection from "../components/admin/DirectorySection.vue";
+import DirectorySection from "../components/shared/DirectorySection.vue";
 import SuggestedLinks from "../components/admin/SuggestedLinks.vue";
 import EditLink from "../components/admin/EditLink.vue";
 import { ref } from "vue";

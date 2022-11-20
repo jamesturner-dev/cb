@@ -5,5 +5,5 @@
 </template>
 
 <script setup>
-import DirectorySection from "../components/admin/DirectorySection.vue";
+import DirectorySection from "../components/shared/DirectorySection.vue";
 </script>

@@ -1,6 +1,6 @@
 <template>
-  <section class="pt-4 text-sm mr-2 leading-3 text-neutral-600">
-    {{ cookies }}
+  <section class="pt-4 text-xs mr-2 leading-3 text-neutral-600">
+    <!-- {{ c }} -->
   </section>
 </template>
 
@@ -12,9 +12,10 @@ export default defineComponent({
     const cookies = useCookies()
     console.log('mounted')
     const { get, getAll } = useCookies(['token'], { doNotParse: false, autoUpdateDependencies: false })
+    const c = get('token')
     console.log(get('token'))
     return {
-      cookies,
+      c,
     }
   }
 })
