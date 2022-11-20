@@ -25,14 +25,14 @@ Once that is done change into each directory ( front end and backend ) run npm i
 
 ### TODO's
 
-- decide how to do the tokens.  I don't want to use local storage, use the cookie.
+- ~~decide how to do the tokens.  I don't want to use local storage, use the cookie~~.
 
 - ~~Add Submit Link form~~.
 - ~~Remove all vestiges of axios~~.
 
 - Make sure I'm using the composition API <script setup> throughout.
 
-- Ensure that all fetch calls are standarized.
+- ~~Ensure that all fetch calls are standarized~~.
 
 - ~~Add search feature - I have it written, find it and impliment~~.
 
