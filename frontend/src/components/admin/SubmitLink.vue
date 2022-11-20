@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
+import { useCookies } from '@vueuse/integrations/useCookies'
 import { Switch, SwitchGroup, SwitchLabel } from "@headlessui/vue";
 import swal from "sweetalert2";
 
@@ -10,6 +11,9 @@ const cbURL = ref("");
 const cbTags = ref("");
 const latestLinks = ref([]);
 const selectedSimilar = ref(latestLinks[0]);
+
+const { get } = useCookies(['token'], { doNotParse: false, autoUpdateDependencies: false })
+const cookieToken = get('token')
 
 const cats = [
   "technology",
@@ -66,9 +70,6 @@ const handleSubmit = async () => {
   }
 
   const apiURL = `/api/v1/dir/63596b8b96fc5870f9bbfbf3/links`;
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNTk1YmIxMWRjNzNjNjI1ZDA3NGE4MCIsImlhdCI6MTY2NzIzMDI2MSwiZXhwIjoxNjY5ODIyMjYxfQ.RNL88OfTWqOnQg7TJXs_qrzLw_C57VbCzuADVrnLXqQ";
-
   const tagList = cbTags.value.split(",").map((e) => e.trim());
 
   const response = await fetch(apiURL, {
@@ -76,7 +77,7 @@ const handleSubmit = async () => {
     headers: {
       Accept: "application/json",
       "Content-type": "application/json",
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${cookieToken}`,
     },
     body: JSON.stringify({
       title: cbTitle.value,

@@ -1,6 +1,11 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import Swal from "sweetalert2";
+import { useCookies } from '@vueuse/integrations/useCookies'
+
+const { get } = useCookies(['token'], { doNotParse: false, autoUpdateDependencies: false })
+const cookieToken = get('token')
+
 const suggestedLinks = ref([]);
 
 const getsuggestedLinks = async () => {
@@ -25,15 +30,13 @@ const deleteLink = async (id) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
       const apiURL = `/api/v1/suggested/${id}`;
-      const token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNTk1YmIxMWRjNzNjNjI1ZDA3NGE4MCIsImlhdCI6MTY2NzIzMDI2MSwiZXhwIjoxNjY5ODIyMjYxfQ.RNL88OfTWqOnQg7TJXs_qrzLw_C57VbCzuADVrnLXqQ";
 
       const requestOptions = {
         method: "DELETE",
         headers: {
           Accept: "application/json",
           "Content-type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${cookieToken}`,
         },
       }
 
