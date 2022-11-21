@@ -82,13 +82,12 @@ const handleSubmit = async () => {
   try {
     const data = await response.json();
     const result = data.success;
-    swal
-      .fire({
-        title: result,
-        text: "Your link has been added to the queue for approval",
-        icon: "success",
-        confirmButtonText: "Cool",
-      })
+    swal.fire({
+      title: result,
+      text: "Your link has been added to the queue for approval",
+      icon: "success",
+      confirmButtonText: "Cool",
+    })
       .then(() => {
         window.location.href = "/";
       });
@@ -105,12 +104,11 @@ const fireLogger = () => {
 <template>
   <div class="mx-auto my-5">
     <h1>
-      <span class="block text-sm font-semibold text-purple-700">
-        Have a link you think we might like?
-      </span>
-      <span
-        class="block text-2xl font-bold leading-8 tracking-tight text-gray-600">
+      <span class="block text-2xl font-bold leading-8 tracking-tight text-gray-600">
         Suggest a cb.link
+      </span>
+      <span class="block text-sm font-semibold text-gray-400">
+        Have a link you think we might like?
       </span>
     </h1>
   </div>
@@ -120,8 +118,7 @@ const fireLogger = () => {
         <dt class="pt-3 text-sm font-medium text-gray-500">URL:</dt>
         <dd class="flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
           <span class="flex-grow">
-            <input
-              type="text"
+            <input type="text"
               class="cblink-input border-2 bg-white border-gray-300 dark:bg-black dark:bg-opacity-95 dark:border-gray-800 dark:text-gray-600"
               v-model="cbURL" />
           </span>
@@ -132,8 +129,7 @@ const fireLogger = () => {
         <dt class="pt-3 mt-5 text-sm font-medium text-gray-500">Title:</dt>
         <dd class="pt-3 flex text-xs text-gray-900 sm:col-span-2 sm:mt-0">
           <span class="flex-grow">
-            <input
-              type="text"
+            <input type="text"
               class="cblink-input border-2 bg-white border-gray-300 dark:bg-black dark:bg-opacity-95 dark:border-gray-800 dark:text-gray-600 cblink-input"
               v-model="cbTitle" />
           </span>
@@ -144,9 +140,7 @@ const fireLogger = () => {
         <dt class="pt-5 text-sm font-medium text-gray-500">Description</dt>
         <dd class="pt-5 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
           <span class="flex-grow">
-            <textarea
-              rows="4"
-              cols="50"
+            <textarea rows="4" cols="50"
               class="cblink-input cblink-input border-2 bg-white border-gray-300 dark:bg-black dark:bg-opacity-95 dark:border-gray-800 dark:text-gray-600"
               v-model="cbDescription" />
           </span>
@@ -157,11 +151,7 @@ const fireLogger = () => {
         <dt class="pt-3 text-sm font-medium text-gray-500">Category:</dt>
         <dd class="pt-3 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
           <span class="flex-grow">
-            <select
-              id="selected-tab"
-              name="selected-tab"
-              v-model="currentCat"
-              on-change="fireLogger()"
+            <select id="selected-tab" name="selected-tab" v-model="currentCat" on-change="fireLogger()"
               class="mt-1 block w-full rounded-md cblink-input border-2 bg-white border-gray-300 dark:bg-black dark:bg-opacity-95 dark:border-gray-800 dark:text-gray-600 py-2 pl-3 pr-10 text-base focus:border-purple-500 focus:outline-none focus:ring-purple-500 sm:text-sm">
               <option v-for="cat in cats" :key="cat">
                 {{ cat }}
@@ -175,21 +165,17 @@ const fireLogger = () => {
         <dt class="pt-3 text-sm font-medium text-gray-500">Tags:</dt>
         <dd class="flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
           <span class="flex-grow">
-            <input
-              type="text"
+            <input type="text"
               class="cblink-input cblink-input border-2 bg-white border-gray-300 dark:bg-black dark:bg-opacity-95 dark:border-gray-800 dark:text-gray-600"
               v-model="cbTags" />
           </span>
           <span class="pt-3 ml-4 flex flex-shrink-0 items-start space-x-4">
-            <button
-              type="button"
-              @click="fireLogger"
+            <button type="button" @click="fireLogger"
               class="rounded-md bg-white dark:bg-opacity-10 px-1 py-0.5 font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
               Update
             </button>
             <span class="text-gray-300" aria-hidden="true">|</span>
-            <button
-              type="button"
+            <button type="button"
               class="rounded-md bg-white dark:bg-opacity-10 px-1 py-0.5 font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
               Remove
             </button>
@@ -199,8 +185,7 @@ const fireLogger = () => {
     </dl>
 
     <div class="mt-10 grid content-center mx-10">
-      <button
-        type="button"
+      <button type="button"
         class="w-50 mx-10 rounded-md border-2 px-2 py-1 mb-5 border-purple-600 font-medium text-purple-600 hover:border-white hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
         v-on:click.prevent="handleSubmit()">
         Suggest A New CBLink

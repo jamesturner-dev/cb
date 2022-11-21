@@ -2,7 +2,7 @@
   <section>
 
     <select v-model="selected"
-      class="my-5 rounded-md border border-gray-200 dark:border-gray-900 dark:bg-black dark:text-gray-300">
+      class="cbSelect dark:border-gray-900 dark:bg-black dark:text-gray-300">
       <option v-for="tab in tabs" :value="tab.name" class="text-gray-600 dark:bg-black">
         {{ tab.name }}
       </option>
@@ -10,7 +10,7 @@
 
     <div v-if="selected == 'Add CbLink'" class="divide-y divide-gray-200 dark:divide-gray-800">
       <CurrentLink />
-      <DirectoryHedaer />
+      <DirectoryHeader />
       <SubmitLink />
     </div>
 
@@ -34,7 +34,7 @@
 </template>
 
 <script setup>
-import DirectoryHedaer from "../components/shared/DirectoryHeader.vue";
+import DirectoryHeader from "../components/shared/DirectoryHeader.vue";
 import CurrentLink from "../components/shared/CurrentLink.vue";
 import SubmitLink from "../components/admin/SubmitLink.vue";
 import LatestLinks from "../components/admin/LatestLinks.vue";

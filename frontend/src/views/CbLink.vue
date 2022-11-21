@@ -35,7 +35,7 @@ const getLink = async () => {
   }
 };
 
-// ok, I have not figured out how to impliment type yet...
+// I have not figured out how to impliment type yet...
 const content = [
   {
     type: "h1",

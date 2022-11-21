@@ -18,11 +18,10 @@ import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import LinkLoop from "../components/dir/LinkLoop.vue";
 import LinkTags from "../components/dir/LinkTags.vue";
+
 const route = useRoute(); // <--- this is the magic line
 const catRoute = route.params.name; // (it is reactive)
-
 const catLinks = ref([]);
-
 const catUrl = `/api/v1/links/?category=${catRoute}`;
 
 const getCatLinks = async () => {

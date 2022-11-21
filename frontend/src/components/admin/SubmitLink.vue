@@ -69,6 +69,7 @@ const handleSubmit = async () => {
     return;
   }
 
+  // remove hard coded directory...  
   const apiURL = `/api/v1/dir/63596b8b96fc5870f9bbfbf3/links`;
   const tagList = cbTags.value.split(",").map((e) => e.trim());
 
