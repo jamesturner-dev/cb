@@ -13,11 +13,10 @@
               cb<span class="text-purple-700">.</span>link by
               <span class="text-purple-700">Salty</span>Ap3
             </h1>
-            <a class="text-gray-500 text-sm hover:text-black dark:hover:text-white"
+            <a class="text-gray-400 dark:text-gray-700 hover:text-black dark:hover:text-white"
               href="https://github.com/jamesturner-dev/cb">
               (<span class="text-xs">The Github Repository is Here</span>)
             </a>
-        
           </div>
         </div>
       </div>
@@ -35,16 +34,8 @@
 
 <script setup>
 import { useDark } from "@vueuse/core";
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 import { Switch } from "@headlessui/vue";
 const isDark = ref(useDark());
-
-
-
-
- 
-onMounted(() => {
-
-});
 
 </script>

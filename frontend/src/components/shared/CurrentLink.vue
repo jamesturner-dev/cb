@@ -1,14 +1,13 @@
 <template>
-  <div class="mb-5">
+  <section class="mb-5">
     <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-300">
       CBLink #: <span class="text-purple-600">{{ currentCount }}</span>
     </h3>
     <p class="max-w-2xl text-sm text-gray-500">
-      Make sure that you
-      <a href="#" class="text-purple-600">read the latest</a>
-      guidence before adding links or creating a directory.
+      Make sure that you <a href="/page/help" class="text-purple-600">
+        read the latest</a> guidence before adding links or creating a directory.
     </p>
-  </div>
+  </section>
 </template>
 
 <script setup>
@@ -24,7 +23,6 @@ const getLinkCount = async () => {
 onMounted(() => {
   try {
     getLinkCount();
-    console.log(currentCount.value);
   } catch (error) {
     console.log(error);
   }

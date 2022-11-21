@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="mt-4">
-      <div class="sm:hidden">
+      <div class="sm:hidden mt-4">
         <label for="current-tab" class="sr-only">Select a tab</label>
         <select id="current-tab" name="current-tab"
           class="block w-full rounded-md border-gray-300 dark:border-gray-700 py-2 pl-3 pr-10 text-base focus:border-purple-500 focus:outline-none focus:ring-purple-500 sm:text-sm">
@@ -39,21 +39,12 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
 import { useRoute } from "vue-router";
 import { computed } from "vue";
 const route = useRoute(); // <--- this is the magic line
 const path = computed(() => route.path);
 const isCurrent = (c) => {
   return c === path.value;
-};
-
-onMounted(() => {
-  console.log(path.value);
-});
-
-const getURL = (id) => {
-  return `/user/${id}`;
 };
 
 const tabs = [

@@ -30,6 +30,8 @@ Once that is done change into each directory ( front end and backend ) run npm i
 - ~~Add Submit Link form~~.
 - ~~Remove all vestiges of axios~~.
 
+- Put these questions and answers in an object instead of inline as time permits
+
 - ~~Ensure that all fetch calls are standarized~~.
 
 - ~~Add search feature - I have it written, find it and impliment~~.
