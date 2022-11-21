@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-4 text-sm mr-2 leading-3 text-neutral-600">
+  <section class="pt-4 text-sm mr-2 leading-3 text-gray-600">
    wtf
   </section>
 </template>

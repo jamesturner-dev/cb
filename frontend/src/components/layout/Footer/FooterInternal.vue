@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h3 class="text-sm font-medium text-neutral-400">Users:</h3>
+    <h3 class="text-sm font-medium text-gray-400">Users:</h3>
     <ul role="list" class="mt-4 space-y-4">
       <li v-for="item in users" :key="item.name">
         <a :href="item.href"
-          class="px-2 py-1 text-sm dark:text-neutral-400 dark:hover:text-white text-neutral-500 hover:text-neutral-900">
+          class="px-2 py-1 text-sm dark:text-gray-400 dark:hover:text-white text-gray-500 hover:text-gray-900">
           {{ item.name }}
         </a>
       </li>

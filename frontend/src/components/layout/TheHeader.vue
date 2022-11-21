@@ -17,7 +17,7 @@
               href="https://github.com/jamesturner-dev/cb">
               (<span class="text-xs">The Github Repository is Here</span>)
             </a>
-           <GetCookie />
+        
           </div>
         </div>
       </div>
@@ -34,7 +34,6 @@
 </template>
 
 <script setup>
-import GetCookie from "../shared/GetCookie.vue";
 import { useDark } from "@vueuse/core";
 import { ref, onMounted } from "vue";
 import { Switch } from "@headlessui/vue";
