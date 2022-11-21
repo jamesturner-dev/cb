@@ -2,10 +2,10 @@
   <div class="flex min-h-full items-center justify-center px-5">
     <div class="w-full max-w-md space-y-8">
       <div>
-        <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-500">
+        <h2 class="mt-6 cbHeader">
           Sign in to your account
         </h2>
-        <p class="mt-2 text-center text-sm text-gray-600">
+        <p class="mt-2 cbMore">
           Or
           {{ " " }}
           <a href="/user/register" class="font-medium text-violet-800 hover:text-purple-500">

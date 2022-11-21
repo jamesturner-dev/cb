@@ -87,10 +87,9 @@ const handleSubmit = async () => {
       text: "Your link has been added to the queue for approval",
       icon: "success",
       confirmButtonText: "Cool",
-    })
-      .then(() => {
-        window.location.href = "/";
-      });
+    }).then(() => {
+      window.location.href = "/";
+    });
   } catch (error) {
     console.log(error);
   }
@@ -99,6 +98,7 @@ const handleSubmit = async () => {
 const fireLogger = () => {
   console.log(`${currentCat.value}`);
 };
+
 </script>
 
 <template>
@@ -151,7 +151,7 @@ const fireLogger = () => {
         <dt class="pt-3 text-sm font-medium text-gray-500">Category:</dt>
         <dd class="pt-3 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
           <span class="flex-grow">
-            <select id="selected-tab" name="selected-tab" v-model="currentCat" on-change="fireLogger()"
+            <select id="selected-tab" name="selected-tab" v-model="currentCat"
               class="mt-1 block w-full rounded-md cblink-input border-2 bg-white border-gray-300 dark:bg-black dark:bg-opacity-95 dark:border-gray-800 dark:text-gray-600 py-2 pl-3 pr-10 text-base focus:border-purple-500 focus:outline-none focus:ring-purple-500 sm:text-sm">
               <option v-for="cat in cats" :key="cat">
                 {{ cat }}

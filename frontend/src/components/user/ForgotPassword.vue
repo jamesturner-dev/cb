@@ -1,17 +1,15 @@
 <template>
   <div class="flex min-h-full items-center justify-center px-5">
-    <div class="w-full max-w-md space-y-8">
-   
-        <h2 class="text-center text-3xl font-bold tracking-tight text-gray-500">
-          Forgot your password?
-        </h2>
-        <p class="text-center text-sm text-gray-600">
-          Enter your email to reset your password or
-          <a href="/user/register" class="font-medium text-violet-800 hover:text-purple-500">
-            sign up if you are a new user.
-          </a>
-        </p>
-     
+    <div class="w-full max-w-md space-y-5">
+
+      <h2 class="cbHeader">Forgot your password?</h2>
+      <p class="cbMore">
+        Enter your email to reset your password or
+        <a href="/user/register" class="font-medium text-violet-800 hover:text-purple-500">
+          sign up if you are a new user.
+        </a>
+      </p>
+
       <form @submit.prevent="" class="mt-8 space-y-3">
         <div class="-space-y-px rounded-md shadow-sm">
           <label for="email-address" class="sr-only">Email address</label>
@@ -55,6 +53,7 @@ export default {
         "/api/v1/auth/forgotpassword",
         requestOptions
       );
+
       const data = await response.json();
       this.token = data.token;
       console.log(this.token);

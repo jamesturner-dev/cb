@@ -102,3 +102,32 @@ body {
   border-width: 1px;
   border-color: rgb(229 231 235);
 }
+
+.cbP{
+  font-size: 0.875rem/* 14px */;
+  line-height: 1.25rem/* 20px */;
+  font-weight: 500;
+  color: rgb(17 24 39);
+}
+
+.cbSub{
+  font-size: 0.75rem/* 12px */;
+  line-height: 1rem/* 16px */;
+  color: rgb(156 163 175);
+}
+
+.cbHeader{
+  text-align: center;
+  font-size: 1.875rem/* 30px */;
+  line-height: 2.25rem/* 36px */;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: rgb(107 114 128);
+}
+
+.cbMore{
+  text-align: center;
+  font-size: 0.875rem/* 14px */;
+  line-height: 1.25rem/* 20px */;
+  color: rgb(75 85 99);
+}

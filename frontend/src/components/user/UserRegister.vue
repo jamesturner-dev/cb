@@ -5,7 +5,7 @@
         <h2 class="mt-6 text-center text-2xl font-bold tracking-tight text-gray-500">
           Register a new account
         </h2>
-        <p class="mt-2 text-center text-sm text-gray-600">
+        <p class="mt-2 cbMore">
           There are {{ freeSpotsRemaing }} free directories remaining.
         </p>
       </div>

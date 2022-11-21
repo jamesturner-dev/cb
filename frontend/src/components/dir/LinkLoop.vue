@@ -3,7 +3,7 @@
     <div class="flex-1 truncate">
       <div class="flex items-center space-x-3">
         <h3 
-          class="truncate text-sm font-medium text-gray-900 dark:text-gray-200">
+          class="truncate cbP dark:text-gray-200">
           <a :href="link.longUrl">{{ link.title }}</a>
         </h3>
         <span
@@ -13,10 +13,10 @@
           </a>
         </span>
       </div>
-      <p class="mt-1 truncate text-xs text-gray-500">
+      <p class="mt-1 truncate cbSub">
         {{ link.description }}
       </p>
-      <div class="text-xs text-gray-400">
+      <div class="cbSub">
         Created on {{ link.createdAt.slice(0, 10) }} . Rated:
         <span class="text-purple-600">
           {{ link.rating }}
