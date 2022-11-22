@@ -42,6 +42,16 @@ const cats = [
 const currentCat = ref(cats[0]);
 
 const handleSubmit = async () => {
+
+  if (!cookieToken) {
+    swal.fire({
+      title: "Error",
+      text: "You must be logged in to submit a link",
+      icon: "error",
+    });
+    return;
+  }
+
   if (cbTitle.value === undefined || cbTitle.value === "") {
     swal.fire({
       icon: "error",

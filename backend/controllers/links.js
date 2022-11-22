@@ -63,6 +63,9 @@ exports.getLinkById = asyncHandler(async (req, res, next) => {
 // ** @route  POST /api/v1/directories/:DirectoryId/links
 // ** @access Private
 
+// ! Most of this code is simply error handling, 
+// ! Note that the getShortUrl is called here
+
 exports.addLink = asyncHandler(async (req, res, next) => {
   const count = await getCount("link");
   if (!count) {
@@ -70,6 +73,7 @@ exports.addLink = asyncHandler(async (req, res, next) => {
   }
 
   const shortURL = await getShortURL(count);
+
   if (!shortURL) {
     return next(
       new ErrorResponse(`Could not create shortUrl with ${count}`, 404)
@@ -103,6 +107,15 @@ exports.addLink = asyncHandler(async (req, res, next) => {
   }
 
   const link = await Link.create(req.body);
+
+  if (!link) {
+    return next(
+      new ErrorResponse(
+        `Could not create link with ${req.body.shortUrl}`,
+        404
+      )
+    );
+  }
 
   res.status(201).json({
     success: true,
