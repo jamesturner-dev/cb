@@ -5,9 +5,8 @@
       <dd class="mt-1 flex text-sm text-gray-700 sm:col-span-2 sm:mt-0">
         <span class="flex-grow">The Default Directory</span>
         <span class="ml-4 flex-shrink-0">
-          <button
-            type="button"
-            class="smallButton dark:bg-opacity-10  focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
+          <button type="button"
+            class="smallButton dark:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
             Change Directory
           </button>
         </span>
