@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="px-2 divide-y divide-gray-200 dark:divide-gray-800">
 
     <select v-model="selected"
       class="cbSelect dark:border-gray-900 dark:bg-black dark:text-gray-300">
@@ -8,25 +8,25 @@
       </option>
     </select>
 
-    <div v-if="selected == 'Add CbLink'" class="divide-y divide-gray-200 dark:divide-gray-800">
+    <div v-if="selected == 'Add CbLink'">
       <CurrentLink />
       <DirectoryHeader />
       <SubmitLink />
     </div>
 
-    <div v-if="selected == 'Latest Links'" class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
+    <div v-if="selected == 'Latest Links'">
       <LatestLinks />
     </div>
 
-    <div v-if="selected == 'Directory View'" class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
+    <div v-if="selected == 'Directory View'">
       <DirectorySection />
     </div>
 
-    <div v-if="selected == 'Suggested Links'" class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
+    <div v-if="selected == 'Suggested Links'">
       <SuggestedLinks />
     </div>
 
-    <div v-if="selected == 'Edit Link'" class="mt-5 divide-y divide-gray-200 dark:divide-gray-800">
+    <div v-if="selected == 'Edit Link'">
       <EditLink />
     </div>
 

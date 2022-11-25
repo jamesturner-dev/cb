@@ -80,6 +80,20 @@ body {
   outline-offset: 2px;
 }
 
+.smallButton{
+  border-radius: 0.375rem/* 6px */;
+  padding: 0.25rem/* 4px */;
+  color: rgb(214, 214, 214);
+  font-weight: 500;
+  background-color: rgb(147 51 234);
+
+}
+
+.smallButton:hover{
+  color: rgb(255, 255, 255);
+  background-color: rgb(126 34 206);
+}
+
 .primary{
   background-color: rgb(147 51 234);
   color: rgb(255 255 255);

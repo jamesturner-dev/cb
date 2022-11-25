@@ -3,7 +3,7 @@
 
     <ResultsHeader :content="[`${returnedLinks.length} results returned for`, searchTerm]" />
 
-    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-800 mt-5">
+    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-800">
       <li v-for="(link, i) in returnedLinks" :key="i" class="py-4 ml-3">
 
         <p class="cbP dark:text-gray-600">

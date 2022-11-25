@@ -1,5 +1,5 @@
 <template>
-  <section class="mb-5">
+  <section class="my-5">
     <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-300">
       CBLink #: <span class="text-purple-600">{{ currentCount }}</span>
     </h3>
