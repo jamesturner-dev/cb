@@ -1,57 +1,7 @@
-<script setup>
-import { ref, onMounted } from "vue";
-import { useRoute } from "vue-router";
-const route = useRoute();
-const searchTerm = route.params.searchTerm; // (it is reactive)
-const returnedLinks = ref([]);
-const linkCount = ref([]);
-
-const getSearchedLinks = async () => {
-
-  const requestOptions = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      searchTerm: searchTerm,
-    }),
-  };
-
-  const response = await fetch(
-    "/api/v1/search",
-    requestOptions
-  );
-
-  const data = await response.json();
-
-  if (data.count != 0) {
-    linkCount.value.push(data.count);
-    const _lyst = data.data;
-    _lyst.forEach((item) => {
-      returnedLinks.value.push(item);
-    });
-  }
-
-};
-
-const getURL = (id) => {
-  return `/cat/${id}`;
-};
-
-onMounted(() => {
-  try {
-    getSearchedLinks();
-  } catch (error) {
-    console.log(error);
-  }
-});
-</script>
-
 <template>
   <section>
 
-    <h3 class="mt-5 ml-3 dark:text-gray-500">
-      {{ linkCount[0] }} Search Results
-    </h3>
+    <ResultsHeader :content="[`${returnedLinks.length} results returned for`, searchTerm]" />
 
     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-800 mt-5">
       <li v-for="(link, i) in returnedLinks" :key="i" class="py-4 ml-3">
@@ -81,3 +31,53 @@ onMounted(() => {
     </ul>
   </section>
 </template>
+
+<script setup>
+import { ref, onMounted } from "vue";
+import { useRoute } from "vue-router";
+import ResultsHeader from "../components/shared/ResultsHeader.vue";
+
+const route = useRoute();
+const searchTerm = route.params.searchTerm; // (it is reactive)
+const returnedLinks = ref([]);
+const content = [];
+
+const getSearchedLinks = async () => {
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      searchTerm: searchTerm,
+    }),
+  };
+
+  const response = await fetch(
+    "/api/v1/search",
+    requestOptions
+  );
+
+  const data = await response.json();
+
+  if (data.count != 0) {
+    const _lyst = data.data;
+    _lyst.forEach((item) => {
+      returnedLinks.value.push(item);
+    });
+  }
+
+};
+
+const getURL = (id) => {
+  return `/cat/${id}`;
+};
+
+
+
+onMounted(() => {
+  try {
+    getSearchedLinks();
+  } catch (error) {
+    console.log(error);
+  }
+});
+</script>
