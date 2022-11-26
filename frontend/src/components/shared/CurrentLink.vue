@@ -15,7 +15,7 @@ import { ref, onMounted } from "vue";
 let currentCount = ref("");
 
 const getLinkCount = async () => {
-  const response = await fetch("/api/v1/count");
+  const response = await fetch("http://localhost:5000/api/v1/count");
   const data = await response.json();
   currentCount.value = data.data;
 };

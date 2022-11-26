@@ -50,7 +50,7 @@ export default {
       };
 
       const response = await fetch(
-        "/api/v1/auth/forgotpassword",
+        "http://localhost:5000/api/v1/auth/forgotpassword",
         requestOptions
       );
 

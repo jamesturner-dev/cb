@@ -9,7 +9,7 @@ const cookieToken = get('token')
 const suggestedLinks = ref([]);
 
 const getsuggestedLinks = async () => {
-  const response = await fetch("/api/v1/suggested");
+  const response = await fetch("http://localhost:5000/api/v1/suggested");
   const data = await response.json();
   const _lyst = data.data;
   _lyst.forEach((item) => {
@@ -29,7 +29,7 @@ const deleteLink = async (id) => {
     confirmButtonText: "Yes, delete it!",
   }).then(async (result) => {
     if (result.isConfirmed) {
-      const apiURL = `/api/v1/suggested/${id}`;
+      const apiURL = `http://localhost:5000/api/v1/suggested/${id}`;
 
       const requestOptions = {
         method: "DELETE",

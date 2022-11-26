@@ -52,7 +52,7 @@ const getSearchedLinks = async () => {
   };
 
   const response = await fetch(
-    "/api/v1/search",
+    "http://localhost:5000/api/v1/search",
     requestOptions
   );
 

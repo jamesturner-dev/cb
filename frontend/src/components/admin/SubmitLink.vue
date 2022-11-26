@@ -80,7 +80,7 @@ const handleSubmit = async () => {
   }
 
   // remove hard coded directory...  
-  const apiURL = `/api/v1/dir/63596b8b96fc5870f9bbfbf3/links`;
+  const apiURL = `http://localhost:5000/api/v1/dir/63596b8b96fc5870f9bbfbf3/links`;
   const tagList = cbTags.value.split(",").map((e) => e.trim());
 
   const response = await fetch(apiURL, {
@@ -121,7 +121,7 @@ const handleSubmit = async () => {
 };
 
 const getLatestLinks = async () => {
-  const response = await fetch("/api/v1/links");
+  const response = await fetch("http://localhost:5000/api/v1/links");
   const data = await response.json();
   const lyst = data.data;
   lyst.forEach((item) => {

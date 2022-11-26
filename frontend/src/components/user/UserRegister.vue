@@ -81,7 +81,7 @@ export default {
   methods: {
 
     async getCatLinks() {
-      const response = await fetch("/api/v1/count/users");
+      const response = await fetch("http://localhost:5000/api/v1/count/users");
       const data = await response.json();
 
       if (data.data < 40) {
@@ -119,7 +119,7 @@ export default {
       };
 
       const response = await fetch(
-        "/api/v1/auth/register",
+        "http://localhost:5000/api/v1/auth/register",
         requestOptions
       );
       const data = await response.json();

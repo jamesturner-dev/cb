@@ -21,7 +21,7 @@ import ResultsHeader from "../components/shared/ResultsHeader.vue";
 const route = useRoute(); // <--- this is the magic line
 const catRoute = route.params.name; // (it is reactive)
 const catLinks = ref([]);
-const catUrl = `/api/v1/links/?category=${catRoute}`;
+const catUrl = `http://localhost:5000/api/v1/links/?category=${catRoute}`;
 const content = ["Links in Category", catRoute];
 
 const getCatLinks = async () => {

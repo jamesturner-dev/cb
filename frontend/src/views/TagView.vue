@@ -20,7 +20,7 @@ import ResultsHeader from "../components/shared/ResultsHeader.vue";
 const route = useRoute(); // <--- this is the magic line
 const tagRoute = route.params.name; // (it is reactive)
 const tagLinks = ref([]);
-const tagUrl = `/api/v1/links/?tags=${tagRoute}`;
+const tagUrl = `http://localhost:5000/api/v1/links/?tags=${tagRoute}`;
 
 const content = ["Links Tagged", tagRoute];
 
