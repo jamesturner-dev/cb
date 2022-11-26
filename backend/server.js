@@ -28,7 +28,7 @@ var cors = require("cors");
 
 app.use(
   cors({
-    origin: "https://cb.link",
+    origin: ["https://cb.link", "http://localhost:5173"],
     credentials: true,
   })
 );
