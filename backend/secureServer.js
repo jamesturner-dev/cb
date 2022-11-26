@@ -1,14 +1,11 @@
+const https = require("https");
+const fs = request("fs");
 const path = require("path");
 const express = require("express");
 const dotenv = require("dotenv");
 const fileupload = require("express-fileupload");
 const cookieParser = require("cookie-parser");
-const mongoSanitize = require('express-mongo-sanitize');
 const morgan = require("morgan");
-const helmet = require("helmet");
-const xss = require("xss-clean");
-const hpp = require("hpp");
-const rateLimit = require("express-rate-limit");
 const connectDB = require("./config/db");
 const errorHandler = require("./middleware/error");
 
@@ -28,28 +25,15 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(xss());
+
 var cors = require("cors");
 
-// app.use(
-//   cors({
-//     origin: ["https://cb.link", "http://localhost:5173"],
-//     credentials: true,
-//   })
-// );
-
-app.use(cors());
-
-app.use(mongoSanitize());
-app.use(helmet());
-
-const limiter = rateLimit({
-  windowMs: 10 * 60 * 1000, // 10 minutes
-  max: 100,
-});
-
-app.use(limiter);
-app.use(hpp());
+app.use(
+  cors({
+    origin: ["https://cb.link", "http://localhost:5173"],
+    credentials: true,
+  })
+);
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
@@ -72,7 +56,20 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 const MODE = process.env.NODE_ENV || "development";
 
-const server = app.listen(
+const server = https
+  .createServer(// Provide the private and public key to the server by reading each
+  // file's content with the readFileSync() method.
+  {
+    key: fs.readFileSync("key.pem"),
+    cert: fs.readFileSync("cert.pem"),
+  },app)
+  .listen(4000, ()=>{
+    console.log('server is runing at port 4000')
+  });
+
+
+
+app.listen(
   PORT,
   console.log(`Server running in ${MODE} mode on port ${PORT}`)
 );
